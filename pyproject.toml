@@ -1,0 +1,11 @@
+[project]
+name = "learning-buddy-mvp"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13.7"
+dependencies = [
+    "langchain-core",
+    "langchain-ollama",
+    "pydantic",
+]
