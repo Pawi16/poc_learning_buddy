@@ -1,0 +1,81 @@
+{
+  "module_title": "Course Architect's Analysis of Markdown Text",
+  "overview": "The provided markdown text is a comprehensive analysis of network protocols, focusing on packet switching and circuit switching. The text covers various topics such as message segmentation, queuing delays, and protocol layering. It also includes Java applets for simulated scenarios and Wireshark labs for real-world experimentation.",
+  "topics": [
+    {
+      "topic_title": "Packet Switching",
+      "chunks": [
+        {
+          "title": "Segmentation",
+          "content": "When sending a large file from Host A to Host B, it's essential to segment the file into smaller chunks. This process involves dividing the file into segments of S bits each. For example, if the file is 1000 bits long and we want to segment it into 128-bit chunks, we would divide the file into 8 segments (1000 / 128 = 7.81). Each segment is then wrapped in a header containing control information, such as source and destination addresses, packet sequence numbers, and error-checking data. This segmentation allows for more efficient transmission over networks with varying capacities.",
+          "order_index": 1
+        },
+        {
+          "title": "Packet Formation",
+          "content": "Once the file is segmented, each segment is transformed into a packet by adding an 80-bit header to it. This results in packets of L = 80 + S bits. The header contains essential information that helps routers and switches make decisions about where to forward the packet next. For instance, the source and destination addresses help determine the best path for the packet to reach its intended recipient.",
+          "order_index": 2
+        },
+        {
+          "title": "Network Topology",
+          "content": "In this scenario, there are three links (and two switches) between Host A and Host B. The links are uncongested, meaning no queuing delays occur. This topology allows for multiple paths for the packets to take as they travel from Host A to Host B.",
+          "order_index": 3
+        }
+      ]
+    },
+    {
+      "topic_title": "Circuit Switching",
+      "chunks": [
+        {
+          "title": "Link Speed",
+          "content": "The topic starts with the assumption that users share a 3 Mbps link. This means the total bandwidth available for all users is 3 megabits per second. Understanding the speed of the link is crucial in determining how much data can be transmitted simultaneously.",
+          "order_index": 1
+        },
+        {
+          "title": "User Transmission Requirements",
+          "content": "Each user requires a dedicated bandwidth of 150 kbps when transmitting. This means that if all users were transmitting at the same time, they would collectively require 150 kbps x number of users = total required bandwidth. However, it's important to note that each user only transmits 10 percent of the time.",
+          "order_index": 2
+        },
+        {
+          "title": "User Transmission Patterns",
+          "content": "The fact that each user transmits only 10 percent of the time means that there is a significant amount of idle time. This can be taken advantage of to increase overall network utilization and reduce congestion.",
+          "order_index": 3
+        }
+      ]
+    },
+    {
+      "topic_title": "Message Segmentation",
+      "chunks": [
+        {
+          "title": "Segmentation",
+          "content": "Message segmentation is the process of dividing a message into smaller, manageable chunks. In this context, Host A segments the file into segments of S bits each. This means that the original message is broken down into smaller pieces, making it easier to work with and transmit.",
+          "order_index": 1
+        },
+        {
+          "title": "Packet Formation",
+          "content": "Each segment is then combined with an additional header of 80 bits, resulting in packets of L = 80 + S bits. This process involves adding a header to each segment, which contains important information about the packet, such as its size and contents.",
+          "order_index": 2
+        }
+      ]
+    },
+    {
+      "topic_title": "Wireshark Labs",
+      "chunks": [
+        {
+          "title": "What is Wireshark?",
+          "content": "Wireshark is a network protocol analyzer that allows users to capture and analyze network traffic. It's a powerful tool for understanding how networks work, troubleshooting issues, and learning about different protocols. In this lab, we'll be using Wireshark to explore the inner workings of computer networks.",
+          "order_index": 1
+        },
+        {
+          "title": "Obtaining and Installing Wireshark",
+          "content": "To start using Wireshark, you'll need to obtain and install it on your computer. The instructions for doing so can be found at the website http://www.awl.com/kurose-ross. This will give you access to a wide range of features and tools that will help you analyze network traffic.",
+          "order_index": 2
+        },
+        {
+          "title": "Capturing Network Traffic",
+          "content": "One of the most important things Wireshark can do is capture network traffic. This allows you to see exactly what's happening on your network, including the protocols and data being used. You can use this feature to troubleshoot issues, learn about different protocols, or simply gain a better understanding of how your network works.",
+          "order_index": 3
+        }
+      ]
+    }
+  ]
+}

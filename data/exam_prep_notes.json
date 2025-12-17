@@ -1,0 +1,1052 @@
+[
+  {
+    "section_title": "Computer Networks and the Internet",
+    "notes": [
+      {
+        "title": "Computer Networks and the Internet",
+        "note_content": "• **Computer Network**: A system of interconnected devices that communicate with each other using standardized protocols.\n• **Internet**: The largest engineered system ever created, connecting hundreds of millions of computers, communication links, and switches.\n• **Network Applications**: Programs running on end systems to facilitate communication.\n• **End Systems**: Devices connected to a network, such as laptops or smartphones.\n• **Network Core**: The central part of the network where data is transmitted and switched.",
+        "importance_level": "Notable"
+      },
+      {
+        "title": "Components of a Computer Network",
+        "note_content": "• **Hardware Components**:\n   • End Systems (e.g., laptops, smartphones)\n   • Network Applications\n   • Links (physical media or wireless connections)\n   • Switches (devices that forward data packets)\n• **Software Components**: Protocols and services that enable communication between devices.\n• **Network Architecture**: The structure of a network, including the relationships between hardware and software components.",
+        "importance_level": "Notable"
+      },
+      {
+        "title": "Internet as a Network of Networks",
+        "note_content": "• **Interconnection**: Networks connect with each other to form the Internet.\n• **Autonomy**: Each network operates independently, but can communicate with others.",
+        "importance_level": "Notable"
+      },
+      {
+        "title": "Network Performance and Security",
+        "note_content": "• **Delay**, **Loss**, and **Throughput**: Quantitative models for end-to-end performance.\n• **Protocol Layering**: A framework for designing network protocols.\n• **Service Models**: Abstractions for understanding network behavior.\n• **Security Threats**: Vulnerabilities to attacks, such as hacking or malware.",
+        "importance_level": "Notable"
+      },
+      {
+        "title": "History of Computer Networking",
+        "note_content": "• **Brief Overview**: A summary of the development and evolution of computer networking.\n• **Key Milestones**: Important events and innovations in the history of computer networking.",
+        "importance_level": "Notable"
+      }
+    ]
+  },
+  {
+    "section_title": "1.1 What Is the Internet?",
+    "notes": [
+      {
+        "title": "What Is the Internet?",
+        "note_content": "• **Internet**: a specific computer network that serves as our principal vehicle for discussing computer networks and their protocols.\n\n• **Description 1: Nuts-and-Bolts**:\n  • Focuses on basic hardware and software components that make up the Internet.\n  • Illustrated by Figure 1.1.\n\n• **Description 2: Networking Infrastructure**:\n  • Describes the Internet as a networking infrastructure that provides services to distributed applications.\n\n• **Key Takeaways**: The Internet is a computer network with two descriptions, one focusing on its hardware and software components, and another describing it as a networking infrastructure providing services to distributed applications.",
+        "importance_level": "Noted"
+      }
+    ]
+  },
+  {
+    "section_title": "1.1.1 A Nuts-and-Bolts Description",
+    "notes": [
+      {
+        "title": "1.1.1: A Nuts-and-Bolts Description",
+        "note_content": "• **Internet**: A computer network that interconnects hundreds of millions of computing devices worldwide.\n• **End Systems**: Devices connected to the Internet, including traditional PCs, smartphones, tablets, TVs, gaming consoles, and more. As of July 2011, there were nearly 850 million end systems attached to the Internet.\n• **Communication Links**: Physical media that transmit data at different rates, including coaxial cable, copper wire, optical fiber, and radio spectrum.\n• **Packet Switches**: Devices that forward packets towards their ultimate destinations. Types include routers and link-layer switches.\n• **Route or Path**: The sequence of communication links and packet switches traversed by a packet from the sending end system to the receiving end system.\n• **Internet Service Providers (ISPs)**: Organizations that provide access to the Internet, including residential ISPs, corporate ISPs, university ISPs, and public WiFi providers.\n• **Protocols**: Control the sending and receiving of information within the Internet. Important protocols include TCP/IP, Transmission Control Protocol (TCP), and Internet Protocol (IP).\n• **Standards**: Developed by the Internet Engineering Task Force (IETF) to ensure interoperability among systems and products.",
+        "importance_level": "Notable"
+      }
+    ]
+  },
+  {
+    "section_title": "1.1.2 A Services Description",
+    "notes": [
+      {
+        "title": "1.1.2: Services Description",
+        "note_content": "• **Services**: The Internet provides services to applications, such as electronic mail, Web surfing, social networks, and more.\n• **Distributed Applications**: Applications that involve multiple end systems exchanging data with each other.\n• **End Systems**: Devices that run programs, not packet switches in the network core.\n• **Application Programming Interface (API)**: A set of rules for sending programs to deliver data to destination programs.\n• **Internet API**: The Internet's own API, which specifies how a program asks the Internet infrastructure to deliver data.\n• **Comparison**: Like the postal service, the Internet has its own API that applications must follow to deliver data.\n• **Services Provided**: The Internet provides multiple services to its applications, such as express delivery and reception confirmation.",
+        "importance_level": "Notable"
+      }
+    ]
+  },
+  {
+    "section_title": "A Human Analogy",
+    "notes": [
+      {
+        "title": "Human Analogy: Computer Network Protocol",
+        "note_content": "• **Computer Network Protocol**: A set of rules and conventions that govern communication between entities (humans or computers) to achieve a common goal.\n\n• **Key Components**:\n  • Messages: Sent and received by communicating entities.\n  • Actions: Taken in response to message receipt, such as acknowledging or responding.\n  • Conventions: Established rules for initiating, maintaining, and terminating communication.\n\n• **Human Protocol Analogy**: A human analogy to understand computer network protocols. Two examples are provided:\n  • Asking someone for the time of day (Figure 1.2).\n  • Question-and-answer protocol in a college class.\n\n• **Key Takeaways**:\n  • Computer network protocols rely on established conventions and actions taken in response to message receipt.\n  • Interoperability is crucial; different protocols do not interoperate, leading to no useful work being accomplished.",
+        "importance_level": "Notable"
+      }
+    ]
+  },
+  {
+    "section_title": "Network Protocols",
+    "notes": [
+      {
+        "title": "Network Protocol",
+        "note_content": "• **Network protocol**: Similar to human protocols, but for hardware/software components (e.g., computers, smartphones, routers). \n• Governs activity in the Internet involving 2+ remote entities.\n• Examples: hardware-implemented protocols in connected computers, congestion-control protocols in end systems, and router protocols determining packet paths.",
+        "importance_level": "Noted"
+      },
+      {
+        "title": "Protocol Characteristics",
+        "note_content": "• **Format**: Defines the structure of messages exchanged between entities.\n• **Order**: Specifies the sequence of message exchange.\n• **Actions**: Describes actions taken on transmission and/or receipt of a message or event.",
+        "importance_level": "Noted"
+      },
+      {
+        "title": "Protocol Examples",
+        "note_content": "• **Web Server Request**: Your computer sends a connection request, waits for reply, then sends GET message to fetch Web page.\n• **Internet Protocols**: Used extensively in the Internet and computer networks.",
+        "importance_level": "Noted"
+      },
+      {
+        "title": "Protocol Importance",
+        "note_content": "• Mastering computer networking is equivalent to understanding networking protocols.\n• Some protocols are simple, while others are complex and intellectually deep.",
+        "importance_level": "Noted"
+      }
+    ]
+  },
+  {
+    "section_title": "1.2 The Network Edge",
+    "notes": [
+      {
+        "title": "1.2 The Network Edge",
+        "note_content": "• **Network Edge**: Refers to the components with which we are most familiar, namely computers, smartphones, and other devices that we use on a daily basis.\n\n• These devices are the entry points for data transmission and reception in a computer network.\n\n• They are responsible for initiating and terminating connections with other devices on the network.",
+        "importance_level": "Noted"
+      }
+    ]
+  },
+  {
+    "section_title": "A DIZZYING ARRAY OF INTERNET END SYSTEMS",
+    "notes": [
+      {
+        "title": "A Dizzying Array of Internet End Systems",
+        "note_content": "• **Internet of Things (IoT)**: A wide range of devices, beyond traditional computers, are being connected to the Internet.\n\n• **End Systems**: Devices connected to the Internet, including desktops, servers, mobile devices, and non-traditional devices like appliances and sensors.\n\n• **Hosts**: End systems that run application programs, such as Web browsers or email clients. Hosts can be further divided into **Clients** (desktops, mobile PCs) and **Servers** (powerful machines).\n\n• **Data Centers**: Large facilities housing thousands of servers, used to store and distribute data.\n\n• **Examples of IoT Devices**: Video game consoles, Internet-ready TVs, digital picture frames, washing machines, refrigerators, and even appliances like a toaster that downloads weather forecasts.\n\n• **Benefits**: Leveraging the Internet's ubiquity, standardized protocols, and commodity hardware to network devices together and connect them to servers.",
+        "importance_level": ""
+      }
+    ]
+  },
+  {
+    "section_title": "1.2.1 Access Networks",
+    "notes": [
+      {
+        "title": "1.2.1 Access Networks",
+        "note_content": "• **Access Network**: The network that physically connects an end system to the first router (edge router) on a path from the end system to any other distant end system.\n\n• **Types of Access Networks**:\n  • Thick, shaded lines represent different types of access networks.\n  • Used in various settings: home, enterprise, and wide-area mobile wireless.\n\n• **Key Concepts**: \n  • Edge router: The first router on a path from the end system to any other distant end system.\n  • End system: A device that initiates or responds to data communications.\n",
+        "importance_level": "Noted"
+      }
+    ]
+  },
+  {
+    "section_title": "Home Access: DSL, Cable, FTTH, Dial-Up, and Satellite",
+    "notes": [
+      {
+        "title": "Home Access: DSL, Cable, FTTH, Dial-Up, and Satellite",
+        "note_content": "**Definition:** Home access refers to the methods by which homes connect to the Internet.\n\n• **DSL (Digital Subscriber Line):**\n  • Uses existing telephone infrastructure for data transmission.\n  • Asymmetric: downstream rate is higher than upstream rate.\n  • Pros: widely available, relatively inexpensive.\n  • Cons: distance limitations, potential interference.\n\n• **Cable Internet Access:**\n  • Uses cable television infrastructure for data transmission.\n  • Hybrid fiber-coaxial (HFC) architecture combines fiber and coaxial cables.\n  • Asymmetric: downstream rate is higher than upstream rate.\n  • Pros: widely available, relatively inexpensive.\n  • Cons: shared broadcast medium can lead to reduced speeds.\n\n• **FTTH (Fiber-to-the-Home):**\n  • Uses optical fiber for data transmission directly from the central office to the home.\n  • PON (Passive Optical Network) architecture combines multiple homes onto a single shared fiber.\n  • Pros: high-speed potential, reliable.\n  • Cons: installation costs can be high.\n\n• **Dial-Up:**\n  • Uses traditional phone lines for data transmission.\n  • Slow speeds (56 kbps).\n  • Pros: widely available, relatively inexpensive.\n  • Cons: slow speeds, potential interference.\n\n• **Satellite Internet Access:**\n  • Uses satellite links to connect homes to the Internet.\n  • Pros: can reach remote areas, high-speed potential.\n  • Cons: latency issues, weather interference.",
+        "importance_level": ">= 65% of households have Internet access"
+      }
+    ]
+  },
+  {
+    "section_title": "Access in the Enterprise (and the Home): Ethernet and WiFi",
+    "notes": [
+      {
+        "title": "Access in the Enterprise (and the Home): Ethernet and WiFi",
+        "note_content": "• **Local Area Network (LAN)**: connects an end system to the edge router.\n• **Ethernet**: most prevalent access technology in corporate, university, and home networks. Uses twisted-pair copper wire to connect to an Ethernet switch.\n• **Ethernet Switch**: connects multiple devices together, providing 100 Mbps access to users and up to 10 Gbps for servers.\n\n• **Wireless LAN (WLAN)**: allows users to transmit/receive packets to/from an access point connected into the enterprise's network.\n• **Access Point**: must be within a few tens of meters of the user. Provides shared transmission rate of up to 54 Mbps.\n• **WiFi** (IEEE 802.11): widely used in universities, business offices, cafes, airports, homes, and airplanes.\n\n• **Home Networks**: combine broadband residential access with Ethernet and WiFi technologies to create powerful home networks.\n• **Typical Home Network**: consists of a roaming laptop, wired PC, base station (wireless access point), cable modem, and router.\n• **Benefits**: allows household members to have broadband access to the Internet from anywhere in the house.",
+        "importance_level": ""
+      }
+    ]
+  },
+  {
+    "section_title": "Wide-Area Wireless Access: 3G and LTE",
+    "notes": [
+      {
+        "title": "Wide-Area Wireless Access: 3G and LTE",
+        "note_content": "• **Wide-Area Wireless Access**: Devices like iPhones, BlackBerrys, and Android devices use the same wireless infrastructure as cellular telephony to send/receive packets through a base station operated by the cellular network provider.\n\n• Unlike WiFi, users only need to be within a few tens of kilometers (as opposed to a few tens of meters) of the base station.\n\n• **3G Wireless**: Provides packet-switched wide-area wireless Internet access at speeds in excess of 1 Mbps. Investments have been made in this technology.\n\n• **LTE (Long-Term Evolution)**: Has its roots in 3G technology and can potentially achieve rates in excess of 10 Mbps. LTE downstream rates of many tens of Mbps have been reported in commercial deployments.\n\n• **Key Takeaways**:\n\n    • Wide-area wireless access is used for devices like iPhones, BlackBerrys, and Android devices.\n    • 3G Wireless provides packet-switched wide-area wireless Internet access at speeds in excess of 1 Mbps.\n    • LTE has its roots in 3G technology and can potentially achieve rates in excess of 10 Mbps.",
+        "importance_level": "Not Important"
+      }
+    ]
+  },
+  {
+    "section_title": "1.2.2 Physical Media",
+    "notes": [
+      {
+        "title": "1.2.2 Physical Media",
+        "note_content": "• **Physical Medium**: A medium used to transmit electromagnetic waves or optical pulses between transmitter-receiver pairs.\n\n• **Guided Media**:\n  • Waves guided along a solid medium (e.g., fiber-optic cable, twisted-pair copper wire, coaxial cable).\n• **Unguided Media**:\n  • Waves propagate in the atmosphere and outer space (e.g., wireless LAN, digital satellite channel).\n\n• **Costs**: Labor costs associated with installation are often higher than material costs.\n• **Installation Strategy**: Installing multiple media types upfront can save labor costs in the future.\n\n• **Characteristics**:\n  • Twisted-pair copper wire: relatively inexpensive, but slower and more prone to interference.\n  • Coaxial cable: faster and less prone to interference than twisted-pair, but more expensive.\n  • Multimode fiber-optic cable: fast, reliable, and secure, but more expensive.\n  • Terrestrial radio spectrum: widely available, but subject to interference and limited range.\n  • Satellite radio spectrum: global coverage, but requires line-of-sight and can be affected by weather.\n",
+        "importance_level": "Noted"
+      }
+    ]
+  },
+  {
+    "section_title": "Twisted-Pair Copper Wire",
+    "notes": [
+      {
+        "title": "Twisted-Pair Copper Wire",
+        "note_content": "• **Definition:** Twisted-pair copper wire is the least expensive and most commonly used guided transmission medium, consisting of two insulated copper wires twisted together to reduce electrical interference.\n\n• **Characteristics:*\n  • Two insulated copper wires, each about 1 mm thick, arranged in a regular spiral pattern.\n  • Wires are twisted together to reduce electrical interference from similar pairs close by.\n  • Typically, a number of pairs are bundled together in a cable by wrapping the pairs in a protective shield.\n\n• **Applications:*\n  • Most commonly used for computer networks within a building (LANs).\n  • Data rates for LANs using twisted pair range from 10 Mbps to 10 Gbps.\n  • Used for residential Internet access, enabling access at rates of up to 56 kbps over twisted pair with dial-up modem technology and tens of Mbps over twisted pair with DSL technology.\n\n• **Advantages:*\n  • Cost-effective.\n  • Wide range of data rates achievable (10 Mbps to 10 Gbps).\n\n• **Limitations:*\n  • Relatively low bit rates compared to fiber-optic technology.\n  • Data rates depend on the thickness of the wire and distance between transmitter and receiver.",
+        "importance_level": "Notable"
+      }
+    ]
+  },
+  {
+    "section_title": "Coaxial Cable",
+    "notes": [
+      {
+        "title": "Coaxial Cable",
+        "note_content": "• **Definition:** Coaxial cable consists of two copper conductors, concentric rather than parallel, with special insulation and shielding.\n\n• **Advantages:*\n  • Achieves high data transmission rates\n  • Common in cable television systems\n  • Can be used as a guided shared medium\n\n• **Process:**\n  • Transmitter shifts digital signal to specific frequency band\n  • Analog signal sent from transmitter to one or more receivers\n\n• **Comparison:** Compared to twisted pair, coaxial cable has concentric conductors and special insulation/shielding.\n\n• **Key Term:** **Guided shared medium**",
+        "importance_level": ".5"
+      }
+    ]
+  },
+  {
+    "section_title": "Fiber Optics",
+    "notes": [
+      {
+        "title": "Fiber Optics",
+        "note_content": "• **Optical Fiber**: Thin, flexible medium that conducts pulses of light, representing bits.\n• Supports tremendous bit rates (up to tens or hundreds of gigabits per second).\n• Immune to electromagnetic interference.\n• Low signal attenuation up to 100 kilometers.\n• Hard to tap.",
+        "importance_level": ""
+      },
+      {
+        "title": "Characteristics",
+        "note_content": "• **High-speed transmission**: Supports high bit rates (up to tens or hundreds of gigabits per second).\n• **Immune to electromagnetic interference**.\n• **Low signal attenuation**: Up to 100 kilometers.\n• **Hard to tap**.",
+        "importance_level": ""
+      },
+      {
+        "title": "Applications",
+        "note_content": "• **Long-haul transmission**: Preferred medium for overseas links and long-distance telephone networks.\n• **Internet backbone**: Prevalent in the backbone of the Internet.\n• **Short-haul transport**: Not widely used due to high cost of optical devices.",
+        "importance_level": ""
+      },
+      {
+        "title": "Standards",
+        "note_content": "• **Optical Carrier (OC)**: Standard link speeds range from 51.8 Mbps to 39.8 Gbps.\n• **OCn**: Link speed equals n × 51.8 Mbps, where n is the standard number (e.g., OC-1, OC-3, etc.).\n• Current standards include OC-1, OC-3, OC-12, OC-24, OC-48, OC-96, and OC-192.",
+        "importance_level": ""
+      },
+      {
+        "title": "References",
+        "note_content": "• [Mukherjee 2006] and [Ramaswamy 2010] provide coverage of various aspects of optical networking.",
+        "importance_level": ""
+      }
+    ]
+  },
+  {
+    "section_title": "Terrestrial Radio Channels",
+    "notes": [
+      {
+        "title": "Terrestrial Radio Channels",
+        "note_content": "• **Radio channels** carry signals in the electromagnetic spectrum.\n• Characteristics depend on propagation environment and distance.\n• Environmental factors: \n  • **Path loss**: signal strength decreases over distance\n  • **Shadow fading**: signal strength decreases around/through obstructing objects\n  • **Multipath fading**: signal reflection off interfering objects\n  • **Interference**: other transmissions and electromagnetic signals",
+        "importance_level": "default"
+      },
+      {
+        "title": "Terrestrial Radio Channel Classification",
+        "note_content": "• Terrestrial radio channels can be classified into three groups:\n• **Short-distance** (1-2 meters): personal devices like wireless headsets, keyboards, and medical devices\n• **Local-area** (10-100 meters): wireless LAN technologies\n• **Wide-area** (tens of kilometers): cellular access technologies",
+        "importance_level": "default"
+      }
+    ]
+  },
+  {
+    "section_title": "Satellite Radio Channels",
+    "notes": [
+      {
+        "title": "Satellite Radio Channels",
+        "note_content": "• **Communication Satellite**: Links two or more Earth-based microwave transmitter/receivers (ground stations) by receiving transmissions on one frequency band, regenerating the signal using a repeater, and transmitting it on another frequency.\n\n• Two types of satellites: **Geostationary Satellites** and **Low-Earth Orbiting (LEO) Satellites**.\n\n• **Geostationary Satellites**: Permanently remain above the same spot on Earth by orbiting at 36,000 kilometers above Earth's surface. This introduces a signal propagation delay of 280 milliseconds.\n\n• **Pros**: Used in areas without access to DSL or cable-based Internet access; can operate at speeds of hundreds of Mbps.\n\n• **Cons**: Signal propagation delay.\n\n• **LEO Satellites**: Placed much closer to Earth and do not remain permanently above one spot on Earth. They rotate around Earth and may communicate with each other, as well as with ground stations.\n\n• **Pros**: May be used for Internet access in the future; provides continuous coverage to an area.\n\n• **Cons**: Requires many satellites in orbit to provide continuous coverage.",
+        "importance_level": ""
+      }
+    ]
+  },
+  {
+    "section_title": "1.3 The Network Core",
+    "notes": [
+      {
+        "title": "1.3 The Network Core",
+        "note_content": "• **Network Core**: The mesh of packet switches and links that interconnect the Internet's end systems.\n\n• **Key Components**:\n  • **Packet Switches**: Devices that forward packets based on destination IP addresses.\n  • **Links**: Physical or logical connections between packet switches.\n\n• **Functions**:\n  • **Forwarding**: Packet switches forward packets to the next hop towards their destination.\n  • **Routing**: The process of determining the best path for forwarding packets.\n\n• **Advantages**:\n  • **Scalability**: The network core can be easily expanded by adding more packet switches and links.\n  • **Reliability**: Packet switches can detect and recover from errors in transmitted packets.\n\n• **Challenges**:\n  • **Congestion Control**: Managing the flow of packets to prevent network congestion.\n  • **Security**: Protecting against unauthorized access, spoofing, and other malicious activities.",
+        "importance_level": "Noted"
+      }
+    ]
+  },
+  {
+    "section_title": "1.3.1 Packet Switching",
+    "notes": [
+      {
+        "title": "Packet Switching",
+        "note_content": "• **Packet switching**: method for sending messages between end systems, breaking long messages into smaller chunks (packets) and transmitting them through communication links and packet switches.\n\n• **Packets**: small chunks of data sent from a source end system to a destination end system.\n\n• **Communication links**: physical or logical connections that allow packets to be transmitted between devices.\n\n• **Packet switches** (two types: **routers** and **linklayer switches**): devices that direct packets between communication links.\n\n• **Transmission rate**: the speed at which a link can transmit data, measured in bits per second (bps).\n\n• **Time to transmit a packet**: calculated by dividing the packet size (L) by the transmission rate (R), resulting in L/R seconds.",
+        "importance_level": ""
+      }
+    ]
+  },
+  {
+    "section_title": "Store-and-Forward Transmission",
+    "notes": [
+      {
+        "title": "Store-and-Forward Transmission",
+        "note_content": "• **Store-and-forward transmission**: a packet switch receives the entire packet before transmitting any part of it onto the outbound link.\n\n• **Process**:\n  - The router buffers (stores) the packet's bits until it has received all of them.\n  - Only then can it begin to transmit (forward) the packet onto the outbound link.\n\n• **Pros**: allows for processing and storing of packets before forwarding, which is necessary for routers to function correctly.\n• **Cons**: introduces additional delay compared to other transmission methods.",
+        "importance_level": "Notable"
+      },
+      {
+        "title": "Calculating Delay",
+        "note_content": "• **Delay calculation**:\n  - For a single packet, the total delay is **2L/R**, where L is the length of the packet and R is the rate of the link.\n  - This is because the router needs to receive and process the entire packet before forwarding it.\n\n• **Comparison**: if the switch forwarded bits as soon as they arrive (without receiving the entire packet), the total delay would be **L/R**.",
+        "importance_level": "Notable"
+      },
+      {
+        "title": "General Case",
+        "note_content": "• **End-to-end delay**: for sending one packet from source to destination over a path consisting of N links each of rate R, the end-to-end delay is **2L/R**.\n\n• **Extension**: for P packets sent over a series of N links, the delay would be **P × 2L/R**.",
+        "importance_level": "Notable"
+      }
+    ]
+  },
+  {
+    "section_title": "Queuing Delays and Packet Loss",
+    "notes": [
+      {
+        "title": "Queuing Delays and Packet Loss",
+        "note_content": "• **Output Buffer (Output Queue)**: stores packets waiting to be transmitted onto a link.\n• **Output Buffer Queuing Delays**: variable delays caused by congestion in the network, affecting packet transmission.\n• **Packet Loss**: occurs when an arriving packet finds the buffer full and is dropped or one of the already-queued packets is dropped.",
+        "importance_level": "Noted"
+      },
+      {
+        "title": "Queuing Delays",
+        "note_content": "• When a packet arrives at a router, it must wait in the output buffer if the link is busy.\n• **Store-and-Forward Delays**: additional delays caused by queuing packets in the output buffer.\n• **Variable Delays**: depend on network congestion levels.",
+        "importance_level": "Important"
+      },
+      {
+        "title": "Packet Loss",
+        "note_content": "• Occurs when an arriving packet finds the buffer full and is dropped or one of the already-queued packets is dropped.\n• **Finite Buffer Space**: packets may be lost due to limited available space in the output buffer.",
+        "importance_level": "Important"
+      },
+      {
+        "title": "Comparison",
+        "note_content": "• Queuing delays and packet loss are analogous to waiting in line for a bank teller or at a tollbooth.\n• **Network Congestion**: causes queuing delays and packet loss.",
+        "importance_level": "Noted"
+      },
+      {
+        "title": "Figure 1.12",
+        "note_content": "• Illustrates a simple packet-switched network with multiple links and output buffers.\n• **Packet Width**: represents the number of bits in a packet.",
+        "importance_level": "Noted"
+      }
+    ]
+  },
+  {
+    "section_title": "Forwarding Tables and Routing Protocols",
+    "notes": [
+      {
+        "title": "Forwarding Tables",
+        "note_content": "• **Forwarding table**: maps destination addresses to outbound links in a router.\n• Each router has its own forwarding table, which is used to forward packets.",
+        "importance_level": "Noted"
+      },
+      {
+        "title": "Routing Protocols",
+        "note_content": "• **Routing protocols**: automatically set forwarding tables in routers.\n• Determine the shortest path from each router to each destination and use the results to configure forwarding tables.",
+        "importance_level": "Noted"
+      },
+      {
+        "title": "Packet Forwarding Process",
+        "note_content": "• When a packet arrives at a router, it examines the destination address and searches its forwarding table.\n• The router then directs the packet to the appropriate outbound link.",
+        "importance_level": "Noted"
+      },
+      {
+        "title": "End-to-End Routing",
+        "note_content": "• **End-to-end routing**: process of determining the path a packet takes from source to destination.\n• Routers use forwarding tables and routing protocols to forward packets.",
+        "importance_level": "Noted"
+      },
+      {
+        "title": "Traceroute",
+        "note_content": "• **Traceroute**: program that shows the end-to-end route a packet takes in the Internet.\n• Allows users to interactively trace routes from a source to their computer.",
+        "importance_level": "Noted"
+      }
+    ]
+  },
+  {
+    "section_title": "1.3.2 Circuit Switching",
+    "notes": [
+      {
+        "title": "Circuit Switching",
+        "note_content": "• **Definition:** Circuit-switched networks reserve resources (buffers, link transmission rate) along a path for the duration of communication between end systems.\n\n• **Key Characteristics:*\n  • Resources are reserved for each connection.\n  • Each connection gets dedicated transmission rate.\n  • No queuing or waiting for access to links.\n\n• **Example:** Traditional telephone networks, where a connection is established before sending information (voice or facsimile).\n\n• **Advantages:*\n  • Guaranteed constant transmission rate.\n  • No queuing or waiting for access to links.\n\n• **Disadvantages:*\n  • Resources are wasted if the connection is idle.\n  • Connection establishment can be time-consuming.\n\n• **Process:**\n  • Establish a connection between sender and receiver.\n  • Reserve resources along the path.\n  • Transfer data at guaranteed constant rate.",
+        "importance_level": ">=3"
+      }
+    ]
+  },
+  {
+    "section_title": "Multiplexing in Circuit-Switched Networks",
+    "notes": [
+      {
+        "title": "Multiplexing in Circuit-Switched Networks",
+        "note_content": "• **Frequency-Division Multiplexing (FDM)**: divides the frequency spectrum among connections, dedicating a frequency band to each connection for its duration.\n\n• **Time-Division Multiplexing (TDM)**: divides time into frames of fixed duration, with each frame divided into a fixed number of time slots. Each circuit is assigned one time slot in every frame.\n\n**Key Points:**\n\n• FDM dedicates a frequency band to each connection for its duration.\n• TDM dedicates one time slot in every frame to each connection.\n• Transmission rate of a circuit in TDM is equal to the frame rate multiplied by the number of bits in a slot.\n\n**Pros and Cons:**\n\n• **FDM Pros:*\n• Allows multiple connections to share the same link.\n• Each connection gets a dedicated frequency band.\n•\n• **FDM Cons:*\n• Idle network resources during silent periods.\n• Underutilization of network resources.\n•\n• **TDM Pros:*\n• Allocates bandwidth periodically, allowing for more efficient use of resources.\n• Each circuit gets all the bandwidth during its allocated time slot.\n•\n• **TDM Cons:*\n• Idle network resources during silent periods.\n• Underutilization of network resources.\n\n**Numerical Example:**\n\n• Consider sending a file of 640,000 bits from Host A to Host B over a circuit-switched network using TDM with 24 slots and a bit rate of 1.536 Mbps.\n• It takes 500 msec to establish an end-to-end circuit before Host A can begin transmitting the file.\n• The transmission time is independent of the number of links, taking only 10 seconds to transmit the file.\n• Adding the circuit establishment time gives a total transmission time of 10.5 seconds.",
+        "importance_level": ""
+      }
+    ]
+  },
+  {
+    "section_title": "Packet Switching Versus Circuit Switching",
+    "notes": [
+      {
+        "title": "Packet Switching Versus Circuit Switching",
+        "note_content": "• **Definition:** Packet switching is a method where data is transmitted in small packets, and each packet is routed independently through the network. Circuit switching, on the other hand, establishes a dedicated connection between two nodes before transmitting data.\n\n• **Pros of Packet Switching:*\n  • Offers better sharing of transmission capacity than circuit switching.\n  • Simpler, more efficient, and less costly to implement than circuit switching.\n\n• **Cons of Packet Switching:*\n  • Critics argue that packet switching is not suitable for real-time services due to variable and unpredictable end-to-end delays.\n\n• **Process:** In packet switching, the probability of having multiple active users is low. When there are fewer active users, packets flow through the link without delay, similar to circuit switching. However, when more than 10 users are active, the output queue grows until the aggregate input rate falls below the link's capacity.\n\n• **Comparison:** Packet switching provides better sharing of transmission capacity and is simpler to implement than circuit switching. Circuit switching pre-allocates use of the transmission link regardless of demand, while packet switching allocates link use on demand.\n\n• **Trend:** The trend has been in favor of packet switching, with many telephone networks migrating towards it.",
+        "importance_level": "Notable"
+      }
+    ]
+  },
+  {
+    "section_title": "1.3.3 A Network of Networks",
+    "notes": [
+      {
+        "title": "**Network of Networks**",
+        "note_content": "• The Internet is a network of networks, connecting end systems (PCs, smartphones, etc.) to each other.\n• Access ISPs connect end users and content providers into the Internet.\n• To interconnect access ISPs, a network of networks must be created.",
+        "importance_level": "/lozenge6 Interconnection of ISPs"
+      },
+      {
+        "title": "**Network Structure 1**",
+        "note_content": "• A single global transit ISP connects all access ISPs.\n• Each access ISP pays the global transit ISP for connectivity, with pricing reflecting traffic exchanged.",
+        "importance_level": "/lozenge6 Interconnection of ISPs"
+      },
+      {
+        "title": "**Network Structure 2**",
+        "note_content": "• Multiple global transit ISPs compete to connect access ISPs.\n• Access ISPs choose among providers based on pricing and services.",
+        "importance_level": "/lozenge6 Interconnection of ISPs"
+      },
+      {
+        "title": "**Network Structure 3**",
+        "note_content": "• A two-tier hierarchy with global transit providers at the top tier and access ISPs at the bottom tier.\n• Regional ISPs connect to tier-1 ISPs, which do not have a presence in every city.",
+        "importance_level": "/lozenge6 Interconnection of ISPs"
+      },
+      {
+        "title": "**Network Structure 4**",
+        "note_content": "• Points of Presence (PoPs) allow customer networks to connect into provider networks.\n• Multi-homing allows ISPs to connect to two or more providers.\n• Peering allows nearby ISPs to directly connect and reduce costs.",
+        "importance_level": "/lozenge6 Interconnection of ISPs"
+      },
+      {
+        "title": "**Network Structure 5**",
+        "note_content": "• Content provider networks (e.g., Google) create their own private networks to bypass upper tiers.\n• These networks peer with lower-tier ISPs and pay tier-1 ISPs for traffic exchanged.",
+        "importance_level": "/lozenge6 Interconnection of ISPs"
+      }
+    ]
+  },
+  {
+    "section_title": "1.4 Delay, Loss, and Throughput in Packet-Switched Networks",
+    "notes": [
+      {
+        "title": "1.4 Delay, Loss, and Throughput in Packet-Switched Networks",
+        "note_content": "• **Throughput**: The amount of data per second that can be transferred between end systems.\n• **Delay**: The time it takes for data to travel from one end system to another.\n• **Loss**: The loss or corruption of packets during transmission.\n\n**Pros:*\n• Many fascinating issues surrounding how to deal with delay, loss, and throughput in computer networks.\n• Motivates thousands of PhD theses!\n\n**Cons:*\n• Physical laws of reality introduce delay and loss as well as constrain throughput.\n• Unachievable goal of moving data instantly without loss between any two end systems.\n\n**Processes:*\n• Quantifying delay, loss, and throughput in computer networks.",
+        "importance_level": "Noted"
+      }
+    ]
+  },
+  {
+    "section_title": "1.4.1 Overview of Delay in Packet-Switched Networks",
+    "notes": [
+      {
+        "title": "**1.4.1 Overview of Delay in Packet-Switched Networks**",
+        "note_content": "• **Packet switching**: A packet starts at the source host, passes through routers, and ends at the destination host.\n\n• **Nodal delays**: Delays occur at each node (host or router) along the path. These include:\n  • **Nodal processing delay**: Time taken by a node to process a packet.\n  • **Queuing delay**: Time spent waiting in a queue before being processed.\n  • **Transmission delay**: Time taken to transmit a packet from one node to another.\n  • **Propagation delay**: Time it takes for the packet to travel through the network.\n\n• **Total nodal delay**: The accumulation of these delays at each node.\n\n• **Importance of understanding delays**: Delays significantly impact the performance of many Internet applications, such as search, Web browsing, email, maps, instant messaging, and voice-over-IP.",
+        "importance_level": "Notable"
+      }
+    ]
+  },
+  {
+    "section_title": "Types of Delay",
+    "notes": [
+      {
+        "title": "Types of Delay",
+        "note_content": "• **Nodal delay**: The time taken by a packet to pass through a node (router) in the network.\n• **Queueing delay**: The time spent by a packet waiting in a queue before being transmitted on a link.\n• **Transmission delay**: The time it takes for a packet to be transmitted over a link.\n• **Propagation delay**: The time taken for a signal to travel from one node to another.",
+        "importance_level": "Noted"
+      },
+      {
+        "title": "Router A's Role",
+        "note_content": "• When a packet arrives at router A, it examines the packet's header to determine the appropriate outbound link.\n• The packet is then directed to this link (in this case, the one leading to router B).\n• If the link is busy or has packets already queued, the new packet will join the queue.",
+        "importance_level": "Important"
+      },
+      {
+        "title": "Queueing Process",
+        "note_content": "• A packet can only be transmitted on a link if there are no other packets being transmitted and no packets preceding it in the queue.\n• If these conditions are not met, the new packet will join the queue.",
+        "importance_level": "Important"
+      }
+    ]
+  },
+  {
+    "section_title": "Processing Delay",
+    "notes": [
+      {
+        "title": "Processing Delay",
+        "note_content": "• **Processing delay**: Time required to examine packet's header and determine where to direct the packet.\n• Includes time needed to check for bit-level errors in the packet.\n• Typically on the order of microseconds or less in high-speed routers.",
+        "importance_level": "Noted"
+      }
+    ]
+  },
+  {
+    "section_title": "Queuing Delay",
+    "notes": [
+      {
+        "title": "Queuing Delay",
+        "note_content": "• **Queuing delay**: The time a packet spends waiting to be transmitted onto the link at the queue.\n\n• **Queue length**: Affects queuing delay; longer queues result in longer delays. If the queue is empty, queuing delay is zero.\n\n• **Traffic intensity**: Determines the number of packets an arriving packet might expect to find in the queue.\n\n• **Queuing delay duration**: Typically measured in microseconds (μs) or milliseconds (ms).\n",
+        "importance_level": "Noted"
+      }
+    ]
+  },
+  {
+    "section_title": "Transmission Delay",
+    "notes": [
+      {
+        "title": "Transmission Delay",
+        "note_content": "• **Transmission delay**: the time required to transmit all bits of a packet into a link.\n• Calculated as: L/R, where L is the length of the packet (in bits) and R is the transmission rate of the link (in bits per second).\n• Typical values: microseconds to milliseconds in practice.",
+        "importance_level": "Notable"
+      }
+    ]
+  },
+  {
+    "section_title": "Propagation Delay",
+    "notes": [
+      {
+        "title": "Propagation Delay",
+        "note_content": "• **Propagation delay**: The time required for a bit to propagate from the beginning of the link to router B.\n\n• **Propagation speed**: The speed at which bits propagate through the link, dependent on the physical medium (e.g., fiber optics, twisted-pair copper wire).\n\n• **Key point**: Propagation delay is measured in time units (e.g., nanoseconds), while propagation speed is typically measured in meters per second.\n\n• **Process**:\n 1. A bit is pushed into the link.\n 2. The bit propagates at the propagation speed of the link.\n 3. The time required for this process is the propagation delay.",
+        "importance_level": "Noted"
+      }
+    ]
+  },
+  {
+    "section_title": "2 ⋅ 10 8 meters/sec to 3 ⋅ 10 8 meters/sec",
+    "notes": [
+      {
+        "title": "Propagation Delay",
+        "note_content": "**Propagation delay**: The time it takes for data to travel from one router to another. It's calculated by dividing the distance between routers (**d**) by the **propagation speed** of the link (**s**).",
+        "importance_level": "HIGH"
+      },
+      {
+        "title": "Speed of Light Comparison",
+        "note_content": "**2 ⋅ 10 8 meters/sec to 3 ⋅ 10 8 meters/sec**: This is equivalent to, or slightly less than, the speed of light. This comparison highlights the relatively fast propagation speeds in wide-area networks.",
+        "importance_level": "MEDIUM"
+      },
+      {
+        "title": "Propagation Delay Calculation",
+        "note_content": "**d/s** = **propagation delay**, where **d** is the distance between routers and **s** is the propagation speed of the link.",
+        "importance_level": "HIGH"
+      },
+      {
+        "title": "Packet Processing",
+        "note_content": "Once the last bit of a packet reaches router B, it and all preceding bits are stored in router B. Router B then performs forwarding, continuing the process.",
+        "importance_level": "MEDIUM"
+      },
+      {
+        "title": "Wide-Area Network Propagation Delays",
+        "note_content": "**Propagation delays** in wide-area networks are typically measured in milliseconds.",
+        "importance_level": "HIGH"
+      }
+    ]
+  },
+  {
+    "section_title": "Comparing Transmission and Propagation Delay",
+    "notes": [
+      {
+        "title": "Transmission Delay",
+        "note_content": "• **Definition:** The time required for the router to push out the packet.\n• **Function:** Packet length and transmission rate of the link, but has nothing to do with distance between routers.\n• **Example:** 10 cars traveling together as a caravan, each car representing a bit. Time required for tollbooth to service entire caravan is analogous to transmission delay.",
+        "importance_level": "Notable"
+      },
+      {
+        "title": "Propagation Delay",
+        "note_content": "• **Definition:** The time it takes a bit to propagate from one router to the next.\n• **Function:** Distance between routers, but has nothing to do with packet length or transmission rate of link.\n• **Example:** Time required for car to travel from exit of one tollbooth to the next is analogous to propagation delay.",
+        "importance_level": "Notable"
+      },
+      {
+        "title": "Comparison",
+        "note_content": "• Transmission delay has nothing to do with distance between routers, while propagation delay depends on it.\n• Transmission delay is a function of packet length and transmission rate, while propagation delay is a function of distance.",
+        "importance_level": "Notable"
+      },
+      {
+        "title": "Total Nodal Delay",
+        "note_content": "• **Formula:** d_node = d_proc + d_queue + d_trans + d_prop\n• **Components:** Processing, queuing, transmission, and propagation delays.\n• **Importance:** Contribution of delay components can vary significantly.",
+        "importance_level": "Notable"
+      }
+    ]
+  },
+  {
+    "section_title": "1.4.2 Queuing Delay and Packet Loss",
+    "notes": [
+      {
+        "title": "**Queuing Delay**",
+        "note_content": "• **Definition**: The time spent by a packet waiting in the queue before being transmitted.\n• **Characterization**: Typically uses statistical measures such as average queuing delay, variance of queuing delay, and probability that the queuing delay exceeds some specified value.",
+        "importance_level": ""
+      },
+      {
+        "title": "**Factors Affecting Queuing Delay**",
+        "note_content": "• **Traffic Intensity**: The ratio of average rate at which packets arrive to transmission rate. If La/R > 1, the queue will tend to increase without bound and queuing delay will approach infinity.\n• **Arrival Pattern**: Periodic or random arrivals impact queuing delay. Random arrivals typically require more complex analysis.",
+        "importance_level": ""
+      },
+      {
+        "title": "**Queuing Delay Statistics**",
+        "note_content": "• **Average Queuing Delay**: The average time spent by a packet waiting in the queue.\n• **Variance of Queuing Delay**: A measure of how spread out queuing delays are.\n• **Probability that the queuing delay exceeds some specified value**: A measure of the likelihood of exceeding a certain delay.",
+        "importance_level": ""
+      },
+      {
+        "title": "**Traffic Engineering Rule**",
+        "note_content": "• **Design your system so that the traffic intensity is no greater than 1**. This ensures queuing delays remain manageable.",
+        "importance_level": ""
+      },
+      {
+        "title": "**Qualitative Dependence of Average Queuing Delay on Traffic Intensity**",
+        "note_content": "• As traffic intensity approaches 1, average queuing delay increases rapidly.\n• A small percentage increase in intensity can result in a much larger percentage-wise increase in delay.",
+        "importance_level": ""
+      },
+      {
+        "title": "**Interactive Java Applet for Queues**",
+        "note_content": "• Visit the companion Web site to explore an interactive Java applet that demonstrates queuing delays.\n• Set packet arrival rate high enough to exceed traffic intensity of 1 and observe queue buildup over time.",
+        "importance_level": ""
+      }
+    ]
+  },
+  {
+    "section_title": "Packet Loss",
+    "notes": [
+      {
+        "title": "Packet Loss",
+        "note_content": "• **Packet loss**: when a packet arrives at a full queue and is dropped by the router.\n\n• **Finite queue capacity**: packets can arrive to find a full queue, leading to packet loss.\n\n• **Traffic intensity**: measures how busy a network is. As traffic intensity increases, packet loss probability also increases.\n\n• **Performance measurement**: delay and packet loss probability are used to measure node performance.\n\n• **Retransmission**: lost packets may be retransmitted on an end-to-end basis to ensure data transfer.",
+        "importance_level": "Noted"
+      }
+    ]
+  },
+  {
+    "section_title": "1.4.3 End-to-End Delay",
+    "notes": [
+      {
+        "title": "End-to-End Delay",
+        "note_content": "• **End-to-End Delay**: Total delay from source to destination, considering nodal delays and processing/propagation delays.\n\n• **Key Components**:\n  • N -1 routers between source and destination\n  • Processing delay at each router (d proc )\n  • Transmission rate out of each router (R bits/sec)\n  • Propagation on each link (d prop )\n  • Packet size (L) and transmission time (d trans = L/R)\n\n• **Equation**: d end-to-end = ∑(d proc + d trans + d prop )\n\n• **Key Takeaway**: End-to-End Delay is the accumulation of nodal delays, considering processing, transmission, and propagation times.\n",
+        "importance_level": "Notable"
+      }
+    ]
+  },
+  {
+    "section_title": "Traceroute",
+    "notes": [
+      {
+        "title": "Traceroute",
+        "note_content": "**What is Traceroute?** • A program that sends special packets to a destination hostname, tracing the route taken by packets flowing from source to destination.\n• Records round-trip delays and router information for each hop.",
+        "importance_level": "default"
+      },
+      {
+        "title": "How Traceroute Works",
+        "note_content": "**Process:** \n• Source sends N special packets, marked 1 through N, addressed to the destination.\n• Each packet is sent with a unique number (n).\n• When the nth router receives the nth packet, it sends back a message to the source.\n• The source records time elapsed between sending and receiving each packet, along with router information.",
+        "importance_level": "default"
+      },
+      {
+        "title": "Output",
+        "note_content": "**Example Output:** \n• Six columns: n value, router name, address, round-trip delays for three experiments.\n• Asterisk (*) indicates fewer than three messages received from a given router.",
+        "importance_level": "default"
+      },
+      {
+        "title": "Round-Trip Delays",
+        "note_content": "**Definition:** \n• Includes transmission delays, propagation delays, router processing delays, and queuing delays.\n• Queuing delay can vary with time, causing round-trip delay to increase.",
+        "importance_level": "default"
+      },
+      {
+        "title": "Try Traceroute",
+        "note_content": "**Resource:** \n• Visit http://www.traceroute.org for a Web interface to route tracing.\n• Free software programs like PingPlotter provide graphical interfaces to Traceroute.",
+        "importance_level": "default"
+      }
+    ]
+  },
+  {
+    "section_title": "End System, Application, and Other Delays",
+    "notes": [
+      {
+        "title": "End System Delays",
+        "note_content": "• **End system delays** refer to additional significant delays in the end systems, apart from processing, transmission, and propagation delays.\n\n• Examples include:\n  • Purposeful delay for sharing a shared medium (e.g., WiFi or cable modem) as part of its protocol.\n  • Media packetization delay in Voiceover-IP (VoIP) applications.",
+        "importance_level": "Notable"
+      },
+      {
+        "title": "Media Packetization Delay",
+        "note_content": "• **Media packetization delay** is the time it takes to fill a packet with encoded digitized speech before passing it to the Internet in VoIP applications.\n\n• This delay can be significant and impact the user-perceived quality of a VoIP call.",
+        "importance_level": "Notable"
+      }
+    ]
+  },
+  {
+    "section_title": "1.4.4 Throughput in Computer Networks",
+    "notes": [
+      {
+        "title": "Throughput in Computer Networks",
+        "note_content": "• **Throughput**: The rate at which data is transferred from one point to another in a computer network.\n\n• Instantaneous throughput: The rate at which data is received by the destination node at any given time.\n\n• Average throughput: The total amount of data transferred divided by the time it took to transfer that data.\n\n• End-to-end throughput: The maximum rate at which data can be transferred from a source node to a destination node, considering all links and nodes along the path.\n\n**Key Points**:\n\n• Throughput depends on the transmission rates of the links over which the data flows.\n\n• In ideal scenarios, the end-to-end throughput is the minimum transmission rate along the path between source and destination.\n\n• However, in real-world scenarios, intervening traffic can reduce the actual throughput.\n\n**Example 1: Two-Link Network**:\n\n• Consider a file transfer from a server to a client with two communication links and a router.\n\n• The end-to-end throughput is the minimum transmission rate of the two links (min{R_s, R_c}).\n\n**Example 2: Multi-Link Network**:\n\n• Consider a network with N links between a server and a client.\n\n• The end-to-end throughput is the minimum transmission rate of all the links (min{R_1, R_2,..., R_N}).\n\n**Example 3: Internet Scenario**:\n\n• Consider a file transfer from a server to a client over the Internet with high-speed core links.\n\n• The end-to-end throughput is limited by the access link rates (min{R_s, R_c}).\n\n**Example 4: Multi-Client Scenario**:\n\n• Consider multiple clients downloading files from servers over the same network.\n\n• The end-to-end throughput for each download depends on the transmission rate of the shared link in the core and the access link rates (min{R_s, R_c}).",
+        "importance_level": "/lozenge6"
+      }
+    ]
+  },
+  {
+    "section_title": "1.5 Protocol Layers and Their Service Models",
+    "notes": [
+      {
+        "title": "1.5 Protocol Layers and Their Service Models",
+        "note_content": "• **Protocol Layering**: Breaking down the Internet's complexity into manageable layers.\n\n• **OSI Model** (Open Systems Interconnection): A 7-layered model for understanding network architecture.\n\n• **TCP/IP Model**: A 4-layered model used in modern networks, focusing on functionality rather than strict layering.\n\n• **Service Models**:\n\n    • **Connection-Oriented**: Establishes a dedicated connection before data transfer (e.g., TCP).\n    • **Connectionless**: Sends data without establishing a connection beforehand (e.g., UDP).\n    • **Best-Effort**: No guarantees of delivery or order, but attempts to deliver data (e.g., IP).\n\n• **Key Takeaways**:\n\n    • The OSI model provides a clear understanding of network architecture.\n    • The TCP/IP model is more practical and widely used in modern networks.\n    • Understanding service models helps determine the best protocol for specific applications.",
+        "importance_level": "Notable"
+      }
+    ]
+  },
+  {
+    "section_title": "1.5.1 Layered Architecture",
+    "notes": [
+      {
+        "title": "Layered Architecture",
+        "note_content": "• **Layered Architecture**: A way to organize complex systems into smaller, manageable parts.\n\n• **Analogy**: Comparing the airline system to computer networking. Just as passengers go through different stages (ticketing, baggage check, gate, takeoff/landing), packets travel through layers in the Internet.\n\n• **Horizontal Layering**: Breaking down the airline functionality into distinct layers:\n  • Ticketing layer: ticketing agents and baggage checkers\n  • Baggage layer: baggage check-to-claim transfer\n  • Gate layer: departure-gate-to-arrival-gate transfer\n  • Takeoff/Landing layer: runway-torunway transfer\n\n• **Layered Architecture Advantages**:\n  • Modularity: allows for easier changes to the implementation of a service without affecting other components.\n  • Simplification: provides a well-defined, specific part of a large and complex system.\n\n• **Key Takeaway**: A layered architecture is a way to organize complex systems into smaller parts, making it easier to understand, modify, or extend the system.",
+        "importance_level": "Notable"
+      }
+    ]
+  },
+  {
+    "section_title": "Protocol Layering",
+    "notes": [
+      {
+        "title": "Protocol Layering",
+        "note_content": "• **Protocol layering**: Organizing protocols and network hardware/software into layers to provide structure for design.\n\n• Each protocol belongs to one of the layers, offering services to the layer above (service model).\n\n• Layers can be implemented in software, hardware, or a combination of both.\n\n• **Application-layer protocols** (e.g., HTTP, SMTP) are typically implemented in software.\n\n• **Transport-layer protocols** are also usually implemented in software.\n\n• **Physical layer**, **data link layers**, and **network layer** may be implemented in hardware or a combination of both.\n\n• Protocol layering provides modularity, making it easier to update system components.\n\n• However, some researchers argue that layering can lead to duplication of lower-layer functionality and information sharing between layers, violating the goal of separation.",
+        "importance_level": "Notable"
+      },
+      {
+        "title": "Advantages",
+        "note_content": "• **Modularity**: Easier to update system components.\n\n• **Structured approach**: Provides a clear framework for discussing system components.",
+        "importance_level": "Notable"
+      },
+      {
+        "title": "Drawbacks",
+        "note_content": "• **Duplication of functionality**: One layer may duplicate lower-layer functionality.\n\n• **Information sharing**: Functionality at one layer may need information present only in another layer, violating the goal of separation.",
+        "importance_level": "Notable"
+      },
+      {
+        "title": "Protocol Stack",
+        "note_content": "• The Internet protocol stack consists of five layers: **physical**, **link**, **network**, **transport**, and **application**.\n\n• The OSI reference model is similar, with seven layers (Figure 1.23/b).",
+        "importance_level": "Notable"
+      },
+      {
+        "title": "Approach",
+        "note_content": "• We take a top-down approach, covering the **application layer** first and then proceeding downward.",
+        "importance_level": "Notable"
+      }
+    ]
+  },
+  {
+    "section_title": "Application Layer",
+    "notes": [
+      {
+        "title": "Application Layer",
+        "note_content": "• **Application layer**: where network applications and their application-layer protocols reside.\n• Includes protocols like HTTP, SMTP, FTP, and DNS for tasks such as Web document request, email transfer, file transfer, and domain name translation.",
+        "importance_level": ""
+      },
+      {
+        "title": "Application-Layer Protocols",
+        "note_content": "• **Application-layer protocol**: distributed over multiple end systems, used by applications to exchange information.\n• Example: HTTP for Web document request and transfer.\n• Easy to create and deploy new protocols.",
+        "importance_level": ""
+      },
+      {
+        "title": "Message Exchange",
+        "note_content": "• **Message**: packet of information exchanged between applications at the application layer.\n• Applications use protocols to send and receive messages.",
+        "importance_level": ""
+      }
+    ]
+  },
+  {
+    "section_title": "Transport Layer",
+    "notes": [
+      {
+        "title": "Transport Layer",
+        "note_content": "• **Transport Layer**: Transports application-layer messages between application endpoints.\n• Two transport protocols: TCP and UDP.",
+        "importance_level": "default"
+      },
+      {
+        "title": "TCP (Connection-Oriented)",
+        "note_content": "• **TCP** provides a connection-oriented service to its applications.\n• Includes:\n  • Guaranteed delivery of application-layer messages to the destination\n  • Flow control (sender/receiver speed matching)\n• Breaks long messages into shorter segments and provides congestion-control mechanism, so that a source throttles its transmission rate when the network is congested.",
+        "importance_level": "default"
+      },
+      {
+        "title": "UDP (Connectionless)",
+        "note_content": "• **UDP** provides a connectionless service to its applications.\n• No-frills service that provides:\n  • No reliability\n  • No flow control\n  • No congestion control",
+        "importance_level": "default"
+      },
+      {
+        "title": "Transport-Layer Packet (Segment)",
+        "note_content": "• A transport-layer packet is referred to as a **segment**.",
+        "importance_level": "default"
+      }
+    ]
+  },
+  {
+    "section_title": "Network Layer",
+    "notes": [
+      {
+        "title": "Network Layer",
+        "note_content": "• **Responsible for moving network-layer packets (datagrams) from one host to another**.\n• Receives transport-layer segments and destination addresses from the transport layer.\n• Provides service of delivering segments to the transport layer in the destination host.",
+        "importance_level": "Notable"
+      },
+      {
+        "title": "**IP Protocol**",
+        "note_content": "• Defines fields in datagrams and how end systems and routers act on these fields.\n• **Only one IP protocol**, all Internet components with a network layer must run it.",
+        "importance_level": "Notable"
+      },
+      {
+        "title": "**Routing Protocols**",
+        "note_content": "• Determine routes datagrams take between sources and destinations.\n• Many routing protocols exist, but **network administrators can choose which one to use within a network**.",
+        "importance_level": "Notable"
+      },
+      {
+        "title": "**Network Layer vs. IP Layer**",
+        "note_content": "• Often referred to as the **IP layer**, reflecting that IP is the glue that binds the Internet together.\n• Contains both IP protocol and routing protocols.",
+        "importance_level": "Notable"
+      }
+    ]
+  },
+  {
+    "section_title": "Link Layer",
+    "notes": [
+      {
+        "title": "Link Layer Overview",
+        "note_content": "• **Link Layer**: responsible for delivering datagrams between nodes (hosts or routers) in the network.\n• **Network Layer**: relies on Link Layer to move packets from one node to the next.\n• **Datagram**: passed down to Link Layer at each node, then up to Network Layer.",
+        "importance_level": "."
+      },
+      {
+        "title": "Link Layer Services",
+        "note_content": "• **Reliable Delivery**: some link-layer protocols provide reliable delivery over one link.\n• **Different Protocols**: different link-layer protocols may be used at different links along a datagram's route (e.g., Ethernet and PPP).\n• **Frames**: Link Layer packets are referred to as frames.",
+        "importance_level": "."
+      },
+      {
+        "title": "Link Layer vs TCP",
+        "note_content": "• **Reliable Delivery**: Link Layer provides reliable delivery over one link, while TCP provides reliable delivery from end system to end system.\n• **Different Scope**: Link Layer focuses on delivering packets between nodes, while TCP focuses on ensuring data integrity and reliability.",
+        "importance_level": "."
+      }
+    ]
+  },
+  {
+    "section_title": "Physical Layer",
+    "notes": [
+      {
+        "title": "Physical Layer",
+        "note_content": "• **Physical Layer**: Moves individual bits within a frame from one node to the next.\n\n• **Link-dependent protocols**: Vary depending on the transmission medium (e.g., twisted-pair copper wire, single-mode fiber optics).\n\n• **Ethernet examples**:\n  • Twisted-pair copper wire protocol\n  • Coaxial cable protocol\n  • Fiber protocol\n\n• **Key takeaway**: The physical layer is responsible for transmitting individual bits across a link, with protocols varying depending on the transmission medium.",
+        "importance_level": "Notable"
+      },
+      {
+        "title": "Physical Layer vs Link Layer",
+        "note_content": "• **Link Layer**: Moves entire frames from one network element to an adjacent network element.\n\n• **Physical Layer**: Moves individual bits within a frame from one node to the next.\n\n• **Key difference**: The link layer focuses on moving frames, while the physical layer focuses on transmitting individual bits.",
+        "importance_level": "Notable"
+      }
+    ]
+  },
+  {
+    "section_title": "The OSI Model",
+    "notes": [
+      {
+        "title": "OSI Model Overview",
+        "note_content": "• **OSI Model**: 7-layer reference model proposed by ISO in the late 1970s.\n• Not designed specifically for the Internet, but has had an impact on networking education.",
+        "importance_level": "Notable"
+      },
+      {
+        "title": "OSI Layers",
+        "note_content": "• **Application Layer**: Provides services for interpreting data exchanged between applications.\n• **Presentation Layer**: Offers services like data compression, encryption, and description to facilitate data exchange.\n• **Session Layer**: Manages delimiting, synchronization, checkpointing, and recovery of data exchange.\n• **Transport Layer**, **Network Layer**, **Data Link Layer**, and **Physical Layer** are similar to their Internet counterparts.",
+        "importance_level": "Notable"
+      },
+      {
+        "title": "Comparison with the Internet Protocol Stack",
+        "note_content": "• The OSI model has two additional layers (**Presentation Layer** and **Session Layer**) not found in the Internet protocol stack.\n• The Internet's answer to this difference is that it's up to the application developer to decide if these services are important and implement them accordingly.",
+        "importance_level": "Notable"
+      }
+    ]
+  },
+  {
+    "section_title": "1.5.2 Encapsulation",
+    "notes": [
+      {
+        "title": "Encapsulation",
+        "note_content": "• **Encapsulation**: The process of wrapping a packet from one layer in the protocol stack with header information and payload from another layer.\n\n• **Transport-layer segment**: A packet that encapsulates an application-layer message, adding transport-layer header information.\n\n• **Network-layer datagram**: A packet that encapsulates a transport-layer segment, adding network-layer header information.\n\n• **Link-layer frame**: A packet that encapsulates a network-layer datagram, adding link-layer header information.\n\n• The process of encapsulation can be complex, involving multiple layers and packets being divided or reconstructed.",
+        "importance_level": "Noted"
+      },
+      {
+        "title": "Example: Sending an Interoffice Memo",
+        "note_content": "• **Application-layer message**: A memo sent from one branch office to another.\n\n• **Transport-layer segment**: The memo in an interoffice envelope with header information (Bob's name and department).\n\n• **Network-layer datagram**: The transport-layer segment inside a postal envelope with header information (postal addresses).\n\n• **Link-layer frame**: Not applicable in this example, but equivalent to the postal service delivering the package.\n\n• De-encapsulation: The process of extracting the original message from its encapsulated layers.",
+        "importance_level": "Noted"
+      },
+      {
+        "title": "Key Points",
+        "note_content": "• **Layers**: Each layer adds header information and payload to create a packet.\n\n• **Encapsulation**: A process of wrapping packets from one layer in the protocol stack with header information and payload from another layer.",
+        "importance_level": "Noted"
+      }
+    ]
+  },
+  {
+    "section_title": "1.6 Networks Under Attack",
+    "notes": [
+      {
+        "title": "Network Security",
+        "note_content": "• **Network security**: defending computer networks against attacks and designing architectures that are immune to such attacks.\n• **Bad guys**: individuals attempting to damage Internet-connected computers, violate privacy, and render inoperable Internet services.",
+        "importance_level": "Noted"
+      }
+    ]
+  },
+  {
+    "section_title": "The bad guys can put malware into your host via the Internet",
+    "notes": [
+      {
+        "title": "Malware Introduction",
+        "note_content": "• **Malware**: malicious software that can enter and infect devices attached to the Internet.\n• Malware can delete files, install spyware, or compromise hosts for botnets.",
+        "importance_level": "Notable"
+      },
+      {
+        "title": "Self-Replicating Malware",
+        "note_content": "• **Self-replicating malware**: spreads exponentially fast by seeking entry into other hosts over the Internet.\n• Can spread in the form of a virus or worm.",
+        "importance_level": "Notable"
+      },
+      {
+        "title": "Virus vs Worm",
+        "note_content": "• **Viruses**: require user interaction to infect devices. Examples include email attachments with malicious code.\n• **Worms**: can enter devices without user interaction, often through vulnerable network applications.",
+        "importance_level": "Notable"
+      },
+      {
+        "title": "Malware Spread",
+        "note_content": "• Malware can spread from one infected host to another over the Internet.\n• Worms can scan for other hosts with vulnerable applications and send copies of themselves.",
+        "importance_level": "Notable"
+      },
+      {
+        "title": "Defending Against Malware",
+        "note_content": "• **Computer network designers** should consider how to defend against malware attacks.\n• This textbook encourages readers to think about this question throughout their studies.",
+        "importance_level": "Important"
+      }
+    ]
+  },
+  {
+    "section_title": "The bad guys can attack servers and network infrastructure",
+    "notes": [
+      {
+        "title": "Denial-of-Service (DoS) Attacks",
+        "note_content": "• **DoS attacks** render networks, hosts, or infrastructure unusable by legitimate users.\n• Can target web servers, email servers, DNS servers, and institutional networks.\n• Extremely common, with thousands of DoS attacks occurring every year.",
+        "importance_level": "default"
+      },
+      {
+        "title": "Types of DoS Attacks",
+        "note_content": "• **Vulnerability attack**: Sending well-crafted messages to a vulnerable application or operating system.\n• **Bandwidth flooding**: Sending a large number of packets to clog the target's access link.\n• **Connection flooding**: Establishing a large number of half-open or fully open TCP connections at the target host.",
+        "importance_level": "default"
+      },
+      {
+        "title": "Bandwidth Flooding Attack",
+        "note_content": "• The attacker needs to send traffic at a rate of approximately **R bps** (server's access rate) to cause damage.\n• A single attack source may not be able to generate enough traffic to harm the server if R is very large.\n• Upstream routers can detect and block all traffic from a single source before it reaches the server.",
+        "importance_level": "default"
+      },
+      {
+        "title": "Distributed Denial-of-Service (DDoS) Attack",
+        "note_content": "• The attacker controls multiple sources and has each source blast traffic at the target.\n• Requires an aggregate traffic rate across all controlled sources to be approximately **R** to cripple the service.\n• Much harder to detect and defend against than a DoS attack from a single host.",
+        "importance_level": "default"
+      },
+      {
+        "title": "Defending Against DoS Attacks",
+        "note_content": "• Different defenses are needed for each type of DoS attack.\n• Computer network designers should consider what can be done to defend against DoS attacks.",
+        "importance_level": "default"
+      }
+    ]
+  },
+  {
+    "section_title": "The bad guys can sniff packets",
+    "notes": [
+      {
+        "title": "Packet Sniffing",
+        "note_content": "• **Packet sniffing**: the act of capturing and analyzing packets transmitted over a network.\n• **Passive receiver**: a device that records copies of every packet transmitted without modifying or injecting any packets into the channel.",
+        "importance_level": "HIGH"
+      },
+      {
+        "title": "Vulnerabilities",
+        "note_content": "• Wireless networks (WiFi, cellular) are vulnerable to packet sniffing.\n• Wired broadcast environments (Ethernet LANs, cable access technologies) can also be compromised.",
+        "importance_level": "HIGH"
+      },
+      {
+        "title": "Packet Sniffer Types",
+        "note_content": "• **Wireless packet sniffer**: captures packets transmitted over wireless networks.\n• **Wired packet sniffer**: captures broadcast packets in wired environments (Ethernet LANs, cable access technologies).\n• **Institutional packet sniffer**: plants a sniffer on an institution's access router or link to the Internet.",
+        "importance_level": "MEDIUM"
+      },
+      {
+        "title": "Detection Challenges",
+        "note_content": "• Packet sniffers are passive, making them difficult to detect.\n• No injected packets into the channel means no indication of packet sniffing activity.",
+        "importance_level": "HIGH"
+      },
+      {
+        "title": "Defenses",
+        "note_content": "• **Cryptography**: a key defense against packet sniffing (Chapter 8).\n• Other defenses will be discussed in Chapter 8.",
+        "importance_level": "HIGH"
+      }
+    ]
+  },
+  {
+    "section_title": "The bad guys can masquerade as someone you trust",
+    "notes": [
+      {
+        "title": "**IP Spoofing**",
+        "note_content": "• Ability to inject packets into the Internet with a false source address.\n• Allows one user to masquerade as another user.\n• Can be used to modify forwarding tables or perform other malicious actions.",
+        "importance_level": "/5"
+      },
+      {
+        "title": "**End-Point Authentication**",
+        "note_content": "• Mechanism to determine with certainty if a message originates from where we think it does.\n• Required to solve IP spoofing problem.\n• Will be explored in Chapter 8.",
+        "importance_level": "/5"
+      },
+      {
+        "title": "**Internet Architecture**",
+        "note_content": "• Originally designed with a model of 'mutually trusting users attached to a transparent network'.\n• This model assumes no need for security.\n• Today's Internet does not involve mutually trusting users, but still requires security measures.",
+        "importance_level": "/5"
+      },
+      {
+        "title": "**Security Challenges**",
+        "note_content": "• Need to defend against sniffing, end-point masquerading, man-in-the-middle attacks, DDoS attacks, malware, and more.\n• Communication among mutually trusted users is the exception rather than the rule.",
+        "importance_level": "/5"
+      }
+    ]
+  },
+  {
+    "section_title": "1.7 History of Computer Networking and the Internet",
+    "notes": [
+      {
+        "title": "History of Computer Networking and the Internet",
+        "note_content": "• **Computer Networking**: The technology that connects devices, enabling communication and data exchange.\n• **Internet**: A global network of interconnected computers and servers, allowing for information sharing and access to resources.\n\n**Key Milestones in the History of the Internet:\n• 1960s: ARPANET (Advanced Research Projects Agency Network) was developed as a precursor to the modern-day Internet.\n• 1983: The Internet Protocol (IP) was introduced, allowing different networks to communicate with each other.\n• 1991: The World Wide Web (WWW) was invented by Tim Berners-Lee, making it easier for users to access and share information.\n\n**Pros of the Internet:\n• Global connectivity and accessibility\n• Facilitates communication, collaboration, and knowledge sharing\n• Enables e-commerce and online transactions\n\n**Cons of the Internet:\n• Security risks (e.g., hacking, cyber attacks)\n• Information overload and misinformation\n• Dependence on infrastructure and maintenance\n\n**Processes in Computer Networking:\n• **Packet Switching**: Breaking data into small packets for efficient transmission.\n• **Routing**: Directing packets through networks to reach their destination.\n• **Addressing**: Assigning unique addresses (IP) to devices for identification and communication.",
+        "importance_level": ""
+      }
+    ]
+  },
+  {
+    "section_title": "1.7.1 The Development of Packet Switching: 1961-1972",
+    "notes": [
+      {
+        "title": "1.7.1 The Development of Packet Switching: 1961-1972",
+        "note_content": "• **Packet Switching**: An efficient and robust alternative to circuit switching for bursty traffic sources.\n• **Leonard Kleinrock** (MIT): Published work on packet-switching techniques in 1961, using queuing theory to demonstrate effectiveness.\n• **Paul Baran** (Rand Institute) and **Donald Davies** & **Roger Scantlebury** (National Physical Laboratory): Developed ideas on packet switching for secure voice over military networks.\n• **ARPAnet**: The first packet-switched computer network, led by J. C. R. Licklider and Lawrence Roberts at MIT.\n• **First Packet Switch Installation**: At UCLA in 1969, under Kleinrock's supervision.\n• **ARPAnet Growth**: Grew to approximately 15 nodes by 1972.\n• **Network-Control Protocol (NCP)**: Completed in 1972, allowing applications to be written.\n• **Ray Tomlinson**: Wrote the first e-mail program in 1972.",
+        "importance_level": ""
+      }
+    ]
+  },
+  {
+    "section_title": "1.7.2 Proprietary Networks and Internetworking: 1972-1980",
+    "notes": [
+      {
+        "title": "1.7.2 Proprietary Networks and Internetworking: 1972-1980",
+        "note_content": "• **ARPAnet**: Initial single, closed network that required physical attachment to another ARPAnet IMP for communication.\n• **ALOHANet**, **DARPA's packet-satellite** and **packet-radio networks**, **Telenet**, **Cyclades**, and other stand-alone packet-switching networks emerged in the early to mid-1970s.\n• **TCP**: Developed by Vinton Cerf and Robert Kahn, TCP combined reliable in-sequence delivery with forwarding functions. Early versions of TCP were different from today's TCP.\n• **UDP**: Separated out of TCP due to recognition of importance for unreliable, non-flow-controlled, end-to-end transport service for applications like packetized voice.\n• **IP**: Conceptually in place by the end of the 1970s, IP was separated out of TCP and developed as a separate protocol.\n• **Ethernet**: Developed by Metcalfe and Boggs, Ethernet protocol allowed multiple PCs to share a single broadcast communication medium (a radio frequency).\n• **Internetworking**: Pioneering work on interconnecting networks under DARPA sponsorship led to the development of an encompassing architecture for connecting networks together.",
+        "importance_level": ""
+      }
+    ]
+  },
+  {
+    "section_title": "1.7.3 A Proliferation of Networks: 1980-1990",
+    "notes": [
+      {
+        "title": "1.7.3 A Proliferation of Networks: 1980-1990",
+        "note_content": "• **ARPAnet**: By the end of the 1970s, approximately two hundred hosts were connected to ARPAnet.\n• **Public Internet**: By the end of the 1980s, the number of hosts connected to the public Internet would reach a hundred thousand.\n• **Growth**: The 1980s would be a time of tremendous growth in computer networks linking universities together.\n• **BITNET**: Provided e-mail and file transfers among several universities in the Northeast.\n• **CSNET**: Formed to link university researchers who did not have access to ARPAnet.\n• **NSFNET**: Created to provide access to NSF-sponsored supercomputing centers, starting with an initial backbone speed of 56 kbps and running at 1.5 Mbps by the end of the decade.\n• **TCP/IP**: Officially deployed as the new standard host protocol for ARPAnet on January 1, 1983, replacing NCP protocol.\n• **DNS**: Developed to map between a human-readable Internet name and its 32-bit IP address.\n• **Minitel**: Launched by the French in the early 1980s as an ambitious plan to bring data networking into everyone's home.\n• **X.25 protocol suite**: Used for Minitel, which consisted of public packet-switched network, Minitel servers, and inexpensive terminals with built-in low-speed modems.\n• **Minitel success**: Became a huge success in 1984 when the French government gave away a free Minitel terminal to each French household that wanted one.\n• **Minitel services**: Offered more than 20,000 services at its peak in the mid-1990s, ranging from home banking to specialized research databases.",
+        "importance_level": ""
+      }
+    ]
+  },
+  {
+    "section_title": "1.7.4 The Internet Explosion: The 1990s",
+    "notes": [
+      {
+        "title": "1.7.4 The Internet Explosion: The 1990s",
+        "note_content": "• **ARPAnet** ceased to exist in the early 1990s.\n• **NSFNET** lifted its restrictions on commercial use in 1991 and was decommissioned in 1995.\n\n• The **World Wide Web (WWW)** emerged as a platform for enabling new applications, including search, e-commerce, and social networks.\n• The WWW was invented by **Tim Berners-Lee** between 1989-1991.\n• Initial versions of **HTML**, **HTTP**, **Web server**, and **browser** were developed.\n\n• By the mid-1990s, university students were using **Netscape browsers** to surf the Web daily.\n• Companies began operating **Web servers** and transacting commerce over the Web.\n• The browser war between **Netscape** and **Microsoft** started around this time.\n\n• The second half of the 1990s saw tremendous growth and innovation, with major corporations and startups creating Internet products and services.\n• Four killer applications emerged:\n    • **E-mail**, including attachments and Web-accessible e-mail.\n    • **The Web**, including Web browsing and Internet commerce.\n    • **Instant messaging**, with contact lists.\n    • **Peer-to-peer file sharing** of MP3s, pioneered by **Napster**.\n\n• The period from 1995-2001 was marked by a roller-coaster ride for the Internet in financial markets.\n• Hundreds of startups made initial public offerings and were traded on the stock market.\n• Many companies were valued in the billions without significant revenue streams.\n• The Internet stocks collapsed in 2000-2001, leading to many startups shutting down.\n• A few companies emerged as big winners, including **Microsoft**, **Cisco**, **Yahoo**, **e-Bay**, **Google**, and **Amazon**.",
+        "importance_level": "Notable"
+      }
+    ]
+  },
+  {
+    "section_title": "1.7.5 The New Millennium",
+    "notes": [
+      {
+        "title": "1.7.5 The New Millennium",
+        "note_content": "• **Broadband Internet access** has become widespread, enabling high-speed video applications like YouTube and Netflix.\n• **Public WiFi networks** and **cellular telephony networks** have increased in speed and ubiquity, allowing for constant connectivity on-the-go.\n• **Online social networks** (e.g., Facebook, Twitter) have created massive people networks, enabling new networked applications and distributed games.\n• **Private networks** deployed by online service providers (e.g., Google, Microsoft) bypass the Internet to provide faster access to services like search results and email.\n• **Cloud computing** has become popular for running applications (e.g., Amazon EC2, Google Application Engine, Microsoft Azure), providing scalable computing and storage environments.",
+        "importance_level": ""
+      }
+    ]
+  },
+  {
+    "section_title": "1.8 Summary",
+    "notes": [
+      {
+        "title": "1.8 Summary",
+        "note_content": "• **Network Architecture**: The Internet is a network of networks, with a hierarchical structure consisting of higher-and lower-tier ISPs.\n\n• **End Systems and Applications**: End systems (e.g., computers) run applications that use the transport service provided by the network.\n\n• **Link-Layer Technologies and Physical Media**: Various link-layer technologies and physical media are used in the access network, such as Ethernet, Wi-Fi, and fiber optic cables.\n\n• **Packet Switching vs. Circuit Switching**: Packet switching is a more efficient approach for transporting data through a telecommunication network, but circuit switching has its own strengths.\n\n• **Delay Models**: Simple quantitative models were developed for transmission, propagation, and queuing delays in packet-switched networks.\n\n• **Protocol Layering and Service Models**: Key architectural principles include protocol layering (e.g., TCP/IP) and service models (e.g., connection-oriented vs. connectionless).\n\n• **Security Attacks**: Common security attacks on the Internet include spoofing, man-in-the-middle, and denial-of-service attacks.\n\n• **History of Computer Networking**: The first chapter provides a brief history of computer networking, from its early beginnings to the present day.",
+        "importance_level": ""
+      }
+    ]
+  },
+  {
+    "section_title": "Road-Mapping This Book",
+    "notes": [
+      {
+        "title": "Road-Mapping This Book",
+        "note_content": "• **Computer Networks and the Internet**: Understand how, what, and why of computer networks.\n• **Sequence of Chapters**:\n  • Chapter 1: Computer Networks and the Internet\n  • Chapter 2-5: Top four layers of the five-layer Internet protocol stack (Application Layer to Network Layer)\n  • Chapter 6-9: Four important topics in modern computer networking (Wireless and Mobile Networks, Multimedia Networking, Security in Computer Networks, and Network Management)",
+        "importance_level": "Noted"
+      }
+    ]
+  }
+]

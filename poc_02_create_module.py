@@ -45,7 +45,7 @@ def create_module_from_markdown():
     structured_llm = llm.with_structured_output(ModulePlan)
 
     # Run the chain
-    # We slice [:30000] to ensure we don't overflow the local model's context context
+    # Slice [:30000] to ensure we don't overflow the local model's context context
     module_plan = structured_llm.invoke(
         f"Analyze the following text and create a structured learning module.\n\nTEXT:\n{markdown_text[:30000]}"
     )

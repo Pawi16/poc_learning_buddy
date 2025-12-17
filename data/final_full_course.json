@@ -1,0 +1,126 @@
+{
+  "module_title": "Logical Topics",
+  "overview": "The goal is to split the entire provided text into logical topics.",
+  "topics": [
+    {
+      "topic_title": "Introduction to Computer Networks and the Internet",
+      "chunks": [
+        {
+          "title": "Introduction to Computer Networks",
+          "content": "Today's Internet is arguably the largest engineered system ever created by mankind, with hundreds of millions of connected computers, communication links, and switches; with billions of users who connect via laptops, tablets, and smartphones; and with an array of new Internet-connected devices such as sensors, Web cams, game consoles, picture frames, and even washing machines.",
+          "order_index": 1
+        },
+        {
+          "title": "Understanding the Complexity of the Internet",
+          "content": "Given that the Internet is so large and has so many diverse components and uses, is there any hope of understanding how it works?",
+          "order_index": 2
+        },
+        {
+          "title": "Guiding Principles for Understanding Computer Networks",
+          "content": "Are there guiding principles and structure that can provide a foundation for understanding such an amazingly large and complex system?",
+          "order_index": 3
+        }
+      ]
+    },
+    {
+      "topic_title": "What Is the Internet?",
+      "chunks": [
+        {
+          "title": "Introduction",
+          "content": "In this book, we'll use the public Internet, a specific computer network, as our principal vehicle for discussing computer networks and their protocols.",
+          "order_index": 1
+        },
+        {
+          "title": "What is the Internet?",
+          "content": "There are a couple of ways to answer this question. We can define it by its purpose or by its technical characteristics.",
+          "order_index": 2
+        }
+      ]
+    },
+    {
+      "topic_title": "A Nuts-and-Bolts Description",
+      "chunks": [
+        {
+          "title": "What is the Internet?",
+          "content": "The Internet is a computer network that interconnects hundreds of millions of computing devices throughout the world.",
+          "order_index": 0
+        },
+        {
+          "title": "Early Computing Devices",
+          "content": "Not too long ago, these computing devices were primarily traditional desktop PCs, Linux workstations, and so-called servers that store and transmit information such as Web pages and e-mail messages.",
+          "order_index": 1
+        }
+      ]
+    },
+    {
+      "topic_title": "A Services Description",
+      "chunks": [
+        {
+          "title": "Introduction",
+          "content": "Our discussion above has identified many of the pieces that make up the Internet.",
+          "order_index": 1
+        },
+        {
+          "title": "Describing the Internet as an Infrastructure",
+          "content": "But we can also describe the Internet from an entirely different angle-namely, as an infrastructure that provides services to distributed applications.",
+          "order_index": 2
+        }
+      ]
+    },
+    {
+      "topic_title": "What Is a Protocol?",
+      "chunks": [
+        {
+          "title": "What Is a Protocol?",
+          "content": "A protocol is a set of rules and standards that govern the exchange of information between devices. In the context of computer networks, anetwork protocol refers to the set of rules and standards that govern the communication between hardware or software components of devices.",
+          "order_index": 1
+        },
+        {
+          "title": "Entities Involved in a Protocol",
+          "content": "In a network protocol, the entities exchanging messages and taking actions are hardware or software components of some device. Examples include computers, smartphones, tablets, routers, or other network-capable devices.",
+          "order_index": 2
+        }
+      ]
+    },
+    {
+      "topic_title": "The Network Edge",
+      "chunks": [
+        {
+          "title": "Introduction",
+          "content": "Not too long ago, the end-system devices connected to the Internet were primarily traditional computers such as desktop machines and powerful servers.",
+          "order_index": 1
+        },
+        {
+          "title": "The Evolution of Devices Connected to the Internet",
+          "content": "Beginning in the late 1990s and continuing today, a wide range of interesting devices are being connected to the Internet,",
+          "order_index": 2
+        },
+        {
+          "title": "Devices Leveraging Digital Data Transmission",
+          "content": "leveraging their ability to send and receive digital data.",
+          "order_index": 3
+        }
+      ]
+    },
+    {
+      "topic_title": "Access Networks",
+      "chunks": [
+        {
+          "title": "Introduction to Access Networks",
+          "content": "In developed countries today, more than 65 percent of the households have Internet access.",
+          "order_index": 0
+        },
+        {
+          "title": "Global Internet Access Statistics",
+          "content": "More than 65 percent of the households have Internet access, with Korea, Netherlands, Finland, and Sweden leading the way with more than 80 percent of households having Internet access,",
+          "order_index": 1
+        },
+        {
+          "title": "High-Speed Broadband Connection Dominance",
+          "content": "almost all via a high-speed broadband connection [ITU 2011].",
+          "order_index": 2
+        }
+      ]
+    }
+  ]
+}
