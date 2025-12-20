@@ -1,0 +1,61 @@
+📌 DETECTED BODY TEXT SIZE: 11.0 pt
+--------------------------------------------------------------------------------
+SIZE 48.0    [HEADER?]
+  • Occurrences: 1
+  • Avg Length:  1 chars
+  • Samples:
+      - "2"
+----------------------------------------
+SIZE 24.0    [HEADER?]
+  • Occurrences: 2
+  • Avg Length:  16 chars
+  • Samples:
+      - "Creating and Destroying Objects"
+      - "T"
+----------------------------------------
+SIZE 13.0    [HEADER?]
+  • Occurrences: 8
+  • Avg Length:  46 chars
+  • Samples:
+      - "Item 1: Consider static factory methods instead of constructors"
+      - "Item 2: Consider a builder when faced with many constructor"
+      - "parameters"
+      - "Item 3: Enforce the singleton property with a private"
+      - "constructor or an enum type"
+----------------------------------------
+SIZE 12.0    [HEADER?]
+  • Occurrences: 1
+  • Avg Length:  13 chars
+  • Samples:
+      - "C H A P T E R"
+----------------------------------------
+SIZE 11.0    [BODY]
+  • Occurrences: 474
+  • Avg Length:  75 chars
+  • Samples:
+      - "HIS chapter concerns creating and destroying objects: when and how to create"
+      - "them, when and how to avoid creating them, how to ensure they are destroyed in a"
+      - "timely manner, and how to manage any cleanup actions that must precede their"
+      - "destruction."
+      - "The traditional way for a class to allow a client to obtain an instance is to provide"
+----------------------------------------
+SIZE 10.0    [SMALL]
+  • Occurrences: 20
+  • Avg Length:  51 chars
+  • Samples:
+      - "5"
+      - "CHAPTER2 CREATING AND DESTROYING OBJECTS 6"
+      - "ITEM 1: CONSIDER STATIC FACTORY METHODS INSTEAD OF CONSTRUCTORS 7"
+      - "CHAPTER2 CREATING AND DESTROYING OBJECTS 8"
+      - "ITEM 1: CONSIDER STATIC FACTORY METHODS INSTEAD OF CONSTRUCTORS 9"
+----------------------------------------
+SIZE 9.0     [SMALL]
+  • Occurrences: 252
+  • Avg Length:  31 chars
+  • Samples:
+      - "public static Boolean valueOf(boolean b) {"
+      - "return b ? Boolean.TRUE : Boolean.FALSE;"
+      - "}"
+      - "Date d = Date.from(instant);"
+      - "Set<Rank> faceCards = EnumSet.of(JACK, QUEEN, KING);"
+----------------------------------------

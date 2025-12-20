@@ -98,5 +98,5 @@ def record_line_stats(words, stats):
 
 # --- EXECUTION ---
 if __name__ == "__main__":
-    pdf_file = "data/pdf/sample_textbook_chapter_1.pdf"
+    pdf_file = "data/pdf/Effective Java chapter 1.pdf"
     generate_font_report(pdf_file)
