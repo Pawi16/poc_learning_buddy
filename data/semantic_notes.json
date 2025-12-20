@@ -1,0 +1,58 @@
+[
+  {
+    "chunk_id": 1,
+    "raw_chunk_preview": "CHAPTER 1  ## Computer Networks and the Internet  Today's Internet is arguably the largest engineere...",
+    "extracted_concepts": [
+      {
+        "concept_name": "Computer Networks",
+        "explanation": "The largest engineered system ever created by mankind, with hundreds of millions of connected computers, communication links, and switches."
+      },
+      {
+        "concept_name": "Internet",
+        "explanation": "A large and complex system with billions of users who connect via laptops, tablets, smartphones, sensors, Web cams, game consoles, picture frames, and even washing machines."
+      },
+      {
+        "concept_name": "Understanding Computer Networks",
+        "explanation": "Guiding principles and structure that can provide a foundation for understanding such an amazingly large and complex system."
+      },
+      {
+        "concept_name": "Learning about Computer Networks",
+        "explanation": "It's possible to learn about computer networks in a way that is both interesting and fun."
+      }
+    ]
+  },
+  {
+    "chunk_id": 3,
+    "raw_chunk_preview": "We'll cover a lot of ground in this introductory chapter and discuss a lot of the pieces of a comput...",
+    "extracted_concepts": [
+      {
+        "concept_name": "Computer Network Overview",
+        "explanation": "The introductory chapter will cover the basic hardware and software components, edge systems, network applications, links, switches, access networks, physical media, and how these connect to form a computer network."
+      },
+      {
+        "concept_name": "Network Structure",
+        "explanation": "The overview of computer networks will be structured as follows: introducing terminology and concepts, examining the edge (end systems and network applications), exploring the core (links, switches, access networks, physical media), and then taking a broader view."
+      },
+      {
+        "concept_name": "Network Performance",
+        "explanation": "The chapter will discuss delay, loss, and throughput of data in a computer network, providing simple quantitative models for end-to-end throughput and delay, considering transmission, propagation, and queuing delays."
+      },
+      {
+        "concept_name": "Architectural Principles",
+        "explanation": "The chapter will introduce protocol layering and service models as key architectural principles in computer networking."
+      },
+      {
+        "concept_name": "Network Security",
+        "explanation": "The chapter will survey some of the attacks that computer networks are vulnerable to, and consider how they can be made more secure."
+      },
+      {
+        "concept_name": "History of Computer Networking",
+        "explanation": "The chapter will close with a brief history of computer networking."
+      },
+      {
+        "concept_name": "What Is the Internet?",
+        "explanation": "The book will use the public Internet as its principal vehicle for discussing computer networks and their protocols. The chapter will describe the nuts and bolts of the Internet, as well as provide an overview of the Internet in terms of a networking infrastructure that provides services to distributed applications."
+      }
+    ]
+  }
+]

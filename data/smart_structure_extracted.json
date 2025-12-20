@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Figure 1.1 (cid:2) Some pieces of the Internet",
+    "content": "Key:\nHost\n(= end system)\nServer Mobile Router Link-Layer\nswitch\nModem Base\nstation\nSmartphone Cell phone\ntower\nNational or\nGlobal ISP\nMobile Network\nLocal or\nRegional ISP\nEnterprise Network\nHome Network\n"
+  },
+  {
+    "title": "8 CHAPTER 1 • COMPUTER NETWORKS AND THE INTERNET",
+    "content": "G E T h t t p : / / w w w . a w l . c o m / k u r o s e - r o s s\n"
+  },
+  {
+    "title": "10 CHAPTER 1 • COMPUTER NETWORKS AND THE INTERNET",
+    "content": "A DIZZYING ARRAY OF INTERNET END SYSTEMS\nNot too long ago, the end-system devices connected to the Internet were primarily\ntraditional computers such as desktop machines and powerful servers. Beginning in\nthe late 1990s and continuing today, a wide range of interesting devices are being\nconnected to the Internet, leveraging their ability to send and receive digital data.\nGiven the Internet’s ubiquity, its well-defined (standardized) protocols, and the\navailability of Internet-ready commodity hardware, it’s natural to use Internet tech-\nnology to network these devices together and to Internet-connected servers.\nMany of these devices are based in the home—video game consoles (e.g.,\nMicrosoft’s Xbox), Internet-ready televisions, digital picture frames that download\nand display digital pictures, washing machines, refrigerators, and even a toaster\nthat downloads meteorological information and burns an image of the day’s fore-\ncast (e.g., mixed clouds and sun) on your morning toast [BBC 2001]. IP-enabled\nphones with GPS capabilities put location-dependent services (maps, information\nabout nearby services or people) at your fingertips. Networked sensors embedded\ninto the physical environment allow monitoring of buildings, bridges, seismic activi-\nty, wildlife habitats, river estuaries, and the weather. Biomedical devices can be\nembedded and networked in a body-area network. With so many diverse devices\nbeing networked together, the Internet is indeed becoming an “Internet of things”\n[ITU 2005b].\n"
+  },
+  {
+    "title": "thousand servers.",
+    "content": "Mobile Network\nNational or\nGlobal ISP\nLocal or\nRegional ISP\nEnterprise Network\nHome Network\n"
+  },
+  {
+    "title": "12 CHAPTER 1 • COMPUTER NETWORKS AND THE INTERNET",
+    "content": "National or\nGlobal ISP\nMobile Network\nLocal or\nRegional ISP\nEnterprise Network\nHome Network\n"
+  },
+  {
+    "title": "the same time. (We’ll describe this technique of frequency-division multiplexing in",
+    "content": "Home PC\nHome\nphone\nDSL\nmodem\nInternet\nTelephone\nnetwork\nSplitter\nExisting phone line:\n0-4KHz phone; 4-50KHz\nupstream data; 50KHz–\n1MHz downstream data\nCentral\noffice\nDSLAM\n"
+  },
+  {
+    "title": "fiber coax (HFC).",
+    "content": "Fiber\ncable\nCoaxial cable\nHundreds\nof homes\nCable head end\nHundreds\nof homes\nFiber\nnode\nFiber\nnode\nInternet\nCMTS\n"
+  },
+  {
+    "title": "16 CHAPTER 1 • COMPUTER NETWORKS AND THE INTERNET",
+    "content": "Internet\nCentral office\nOptical\nsplitter\nONT\nONT\nONT\nOLT\nOptical\nfibers\n"
+  },
+  {
+    "title": "ber roaming from the kitchen to the backyard to the bedrooms.",
+    "content": "Ethernet\nswitch\nInstitutional\nrouter\n100 Mbps\n100 Mbps\n100 Mbps\nServer\nTo Institution’s\nISP\n"
+  }
+]

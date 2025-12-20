@@ -1,0 +1,159 @@
+============================================================
+FONT ANALYSIS REPORT: data/pdf/sample_textbook_chapter_1.pdf
+============================================================
+
+📌 LIKELY BODY TEXT SIZE: 10.0pt
+
+------------------------------------------------------------
+SIZE 72.0   [HEADER?]
+  - Occurrences: 1
+  - Avg Length:  1 chars
+  - Samples:     
+      * "1"
+------------------------------
+SIZE 36.0   [HEADER?]
+  - Occurrences: 3
+  - Avg Length:  10 chars
+  - Samples:     
+      * "Computer"
+      * "Networks and"
+      * "the Internet"
+------------------------------
+SIZE 18.0   [HEADER?]
+  - Occurrences: 8
+  - Avg Length:  26 chars
+  - Samples:     
+      * "1.1 What Is the Internet?"
+      * "1.2 The Network Edge"
+      * "1.3 The Network Core"
+------------------------------
+SIZE 16.0   [HEADER?]
+  - Occurrences: 1
+  - Avg Length:  7 chars
+  - Samples:     
+      * "CHAPTER"
+------------------------------
+SIZE 15.0   [HEADER?]
+  - Occurrences: 5
+  - Avg Length:  18 chars
+  - Samples:     
+      * "in Packet-Switched Networks"
+      * "the Internet"
+      * "Homework Problems and Questions"
+------------------------------
+SIZE 13.0   [HEADER?]
+  - Occurrences: 22
+  - Avg Length:  29 chars
+  - Samples:     
+      * "1.1.1 A Nuts-and-Bolts Description"
+      * "1.1.2 A Services Description"
+      * "1.1.3 What Is a Protocol?"
+------------------------------
+SIZE 11.0   [HEADER?]
+  - Occurrences: 35
+  - Avg Length:  27 chars
+  - Samples:     
+      * "A Human Analogy"
+      * "Network Protocols"
+      * "Home Access: DSL, Cable, FTTH, Dial-Up, and Satellite"
+------------------------------
+SIZE 10.0   [BODY]
+  - Occurrences: 2579
+  - Avg Length:  71 chars
+  - Samples:     
+      * "Today’s Internet is arguably the largest engineered system ever created by mankind,"
+      * "with hundreds of millions of connected computers, communication links, and"
+      * "switches; with billions of users who connect via laptops, tablets, and smartphones;"
+------------------------------
+SIZE 9.7    [SMALL]
+  - Occurrences: 1
+  - Avg Length:  21 chars
+  - Samples:     
+      * "G o t t h e t i m e ?"
+------------------------------
+SIZE 9.4    [SMALL]
+  - Occurrences: 1
+  - Avg Length:  3 chars
+  - Samples:     
+      * "H i"
+------------------------------
+SIZE 9.3    [SMALL]
+  - Occurrences: 1
+  - Avg Length:  3 chars
+  - Samples:     
+      * "H i"
+------------------------------
+SIZE 9.1    [SMALL]
+  - Occurrences: 2
+  - Avg Length:  37 chars
+  - Samples:     
+      * "T C P c o n n e c t i o n r e q u e s t"
+      * "T C P c o n n e c t i o n r e p l y"
+------------------------------
+SIZE 9.0    [SMALL]
+  - Occurrences: 87
+  - Avg Length:  38 chars
+  - Samples:     
+      * "2 CHAPTER 1 • COMPUTER NETWORKS AND THE INTERNET"
+      * "1.1 • WHAT IS THE INTERNET? 3"
+      * "4 CHAPTER 1 • COMPUTER NETWORKS AND THE INTERNET"
+------------------------------
+SIZE 8.9    [SMALL]
+  - Occurrences: 1
+  - Avg Length:  7 chars
+  - Samples:     
+      * "2 : 0 0"
+------------------------------
+SIZE 8.5    [SMALL]
+  - Occurrences: 30
+  - Avg Length:  73 chars
+  - Samples:     
+      * "A DIZZYING ARRAY OF INTERNET END SYSTEMS"
+      * "Not too long ago, the end-system devices connected to the Internet were primarily"
+      * "traditional computers such as desktop machines and powerful servers. Beginning in"
+------------------------------
+SIZE 8.0    [SMALL]
+  - Occurrences: 295
+  - Avg Length:  8 chars
+  - Samples:     
+      * "1"
+      * "Key:"
+      * "National or"
+------------------------------
+SIZE 7.9    [SMALL]
+  - Occurrences: 1
+  - Avg Length:  65 chars
+  - Samples:     
+      * "G E T h t t p : / / w w w . a w l . c o m / k u r o s e - r o s s"
+------------------------------
+SIZE 7.0    [SMALL]
+  - Occurrences: 127
+  - Avg Length:  3 chars
+  - Samples:     
+      * "Host"
+      * "(= end system)"
+      * "Server Mobile Router Link-Layer"
+------------------------------
+SIZE 5.8    [SMALL]
+  - Occurrences: 4
+  - Avg Length:  10 chars
+  - Samples:     
+      * "A v e r a g e"
+      * "VideoNote"
+      * "VideoNote"
+------------------------------
+SIZE 5.5    [SMALL]
+  - Occurrences: 11
+  - Avg Length:  16 chars
+  - Samples:     
+      * "Using Traceroute to"
+      * "discover network"
+      * "paths and measure"
+------------------------------
+SIZE 4.9    [SMALL]
+  - Occurrences: 2
+  - Avg Length:  11 chars
+  - Samples:     
+      * "q u e u i n g"
+      * "d e l a y"
+------------------------------
