@@ -1,0 +1,64 @@
+{
+  "quiz_topics": [
+    {
+      "topicName": "A",
+      "topicContent": "content_mock",
+      "quiz_config": [
+        {
+          "difficulty": "easy",
+          "quiz_type_config": [
+            {
+              "type": "normal_multiple",
+              "number": "3"
+            },
+            {
+              "type": "statement_verification",
+              "number": "2"
+            }
+          ]
+        },
+        {
+          "difficulty": "medium",
+          "quiz_type_config": [
+            {
+              "type": "normal_multiple",
+              "number": "3"
+            },
+            {
+              "type": "statement_verification",
+              "number": "2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicName": "B",
+      "topicContent": "content_mockB",
+      "quiz_config": [
+        {
+          "difficulty": "hard",
+          "quiz_type_config": [
+            {
+              "type": "statement_counting",
+              "number": "3"
+            }
+          ]
+        },
+        {
+          "difficulty": "medium",
+          "quiz_type_config": [
+            {
+              "type": "normal_multiple",
+              "number": "1"
+            },
+            {
+              "type": "statement_verification",
+              "number": "2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

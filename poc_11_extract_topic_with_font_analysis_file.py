@@ -134,7 +134,7 @@ def get_split_sizes_from_ai(font_stats):
     context = "\n".join(report)
     print(context)
 
-    # 🌟 UPDATED PROMPT 🌟
+    # PROMPT
     prompt = f"""
     You are a Document Layout Engineer.
     I need to split this PDF into "Study Topics".

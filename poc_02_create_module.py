@@ -14,11 +14,7 @@ class ModulePlan(BaseModel):
     topics: List[TopicPlan] = Field(..., description="List of 5-10 logical topics extracted from the text")
 
 # --- 2. SETUP LOCAL LLM ---
-llm = ChatOllama(
-    model="llama3", 
-    temperature=0, 
-    format="json" 
-)
+llm = llm = ChatOllama(model="qwen2.5:14b", temperature=0)
 
 def create_module_from_markdown():
     # A. READ THE PREPARED MARKDOWN FILE
