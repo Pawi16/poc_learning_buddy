@@ -1,8 +1,7 @@
 {
   "quiz_topics": [
     {
-      "topicName": "A",
-      "topicContent": "content_mock",
+      "topicID": "id_mock",
       "quiz_config": [
         {
           "difficulty": "easy",
@@ -33,8 +32,7 @@
       ]
     },
     {
-      "topicName": "B",
-      "topicContent": "content_mockB",
+      "topicID": "id_mockB",
       "quiz_config": [
         {
           "difficulty": "hard",
