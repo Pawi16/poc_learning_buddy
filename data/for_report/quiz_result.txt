@@ -1,0 +1,34 @@
+==================================================
+MEDIUM QUIZ OUTPUT:
+  [normal_multiple] Which of the following statements best describes a disadvantage of using the telescoping constructor pattern?
+   (Type ID Verification: 'normal_multiple')
+    a) It allows for easy creation and reading of client code.
+    b) It can lead to inconsistent states during object construction.
+    c) It is difficult to write and read client code when there are many parameters.
+    d) It supports the creation of immutable objects easily.
+  Correct Option: c
+  Explanation: The telescoping constructor pattern becomes cumbersome as the number of parameters increases, making it difficult to write and read client code.       
+------------------------------
+  [statement_verification] Which of the following statements is TRUE regarding the Builder Pattern?
+   (Type ID Verification: 'statement_verification')
+    a) The Builder pattern allows for easy creation and modification of objects with many parameters.
+    b) The Builder pattern does not support immutable object creation.
+    c) The Builder pattern is less verbose than the telescoping constructor pattern.
+    d) The Builder pattern cannot be used in class hierarchies.
+  Correct Option: a
+  Explanation: The Builder pattern provides a fluent API for creating objects with many parameters and supports immutable object creation.
+------------------------------
+HARD QUIZ OUTPUT:
+  [statement_counting] Consider the following statements regarding Builder Pattern:
+I. The simulated self-type idiom allows for proper method chaining without needing casts.
+II. In a performance-critical situation, the overhead of creating a builder might be noticeable and problematic.
+III. A disadvantage of starting with constructors or static factories is that they become obsolete when switching to a builder pattern later on.
+IV. The Builder pattern can automatically fill in some fields upon object creation, such as incrementing serial numbers.  
+   (Type ID Verification: 'statement_counting')
+    a) 0
+    b) 1
+    c) 2
+    d) 3
+    e) 4
+  Correct Option: d
+  Explanation: Statement I is true, as the simulated self-type idiom allows for proper method chaining without casts. Statement II is also true; creating a builder might be problematic in performance-critical situations due to overhead costs. Statement III is true because obsolete constructors or static factories will stick out when switching to a builder pattern later on. Statement IV is true, as mentioned that builders can fill in some fields automatically upon object creation.
