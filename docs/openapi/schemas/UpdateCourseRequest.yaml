@@ -1,0 +1,16 @@
+type: object
+description: "Request body for updating course metadata. All fields are optional (Partial Update)."
+required:
+  - title 
+properties:
+  title:
+    type: string
+    description: "Update title. If null, the existing title remains unchanged."
+    example: "Advanced Java"
+  description:
+    type: string
+    description: "Update description. If null, existing description remains."
+  is_published:
+    type: boolean
+    description: "Update visibility. true = Published, false = Draft."
+    example: true

@@ -1,0 +1,11 @@
+type: object
+properties:
+  token:
+    type: string
+    example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+  token_type:
+    type: string
+    example: "Bearer"
+  expires_in:
+    type: integer
+    example: 3600

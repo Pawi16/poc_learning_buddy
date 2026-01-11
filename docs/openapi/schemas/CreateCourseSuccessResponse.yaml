@@ -1,0 +1,8 @@
+type: object
+properties:
+  course_id:
+    type: integer
+    example: 101
+  message:
+    type: string
+    example: "Course created successfully."

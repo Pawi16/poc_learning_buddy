@@ -1,0 +1,23 @@
+type: object
+description: "The final payload to create the course and its topics in the database."
+required:
+  - title
+  - topics
+properties:
+  title:
+    type: string
+    description: "The final course title (user might have edited it)."
+    example: "Introduction to Java (Final)"
+  description:
+    type: string
+    description: "The course description."
+    example: "A comprehensive guide to Java syntax and OOP."
+  is_published:
+    type: boolean
+    description: "If true, students can see it immediately. Matches 'is_published' in Courses table."
+    default: true
+  topics:
+    type: array
+    description: "The final list of topics (approved and edited by user)."
+    items:
+      $ref: './TopicDraft.yaml' 

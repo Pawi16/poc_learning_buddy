@@ -1,0 +1,15 @@
+type: object
+description: "The credentials required to authenticate a user."
+required:
+  - username
+  - password
+properties:
+  username:
+    type: string
+    example: "student123"
+    description: "The unique username provided during registration."
+  password:
+    type: string
+    format: password
+    example: "SecretP@ss123"
+    description: "The raw password (will be hashed and checked by the backend)."

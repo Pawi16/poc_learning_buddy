@@ -1,0 +1,23 @@
+type: object
+required:
+  - username
+  - email
+  - password
+  - confirm_password
+properties:
+  username:
+    type: string
+    example: "student123"
+  email:
+    type: string
+    format: email
+    example: "student@example.com"
+  password:
+    type: string
+    format: password
+    minLength: 9
+    example: "SecretP@ss123"
+  confirm_password:
+    type: string
+    format: password
+    example: "SecretP@ss123"

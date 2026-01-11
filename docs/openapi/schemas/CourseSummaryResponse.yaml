@@ -1,0 +1,24 @@
+type: object
+description: "Brief summary of a course for list views (My Courses / Explore)."
+properties:
+  id:
+    type: integer
+    example: 101
+  title:
+    type: string
+    example: "Introduction to Java"
+  description:
+    type: string
+    example: "Learn the basics of OOP..."
+  is_published:
+    type: boolean
+    description: "Current status of the course."
+    example: true
+  total_topics:
+    type: integer
+    description: "Count of topics inside."
+    example: 12
+  created_at:
+    type: string
+    format: date-time
+    example: "2024-01-15T10:00:00Z"

@@ -1,0 +1,26 @@
+type: object
+description: "A single topic extracted from the uploaded file."
+required:
+  - title
+  - raw_text
+  - order_index
+properties:
+  title:
+    type: string
+    description: "Topic name identified by AI."
+    example: "1. Introduction to Variables"
+  description:
+    type: string
+    description: "Brief description of what this topic covers."
+    example: "Covers int, float, and string types."
+  raw_text:
+    type: string
+    description: "The full content text extracted for this specific section."
+  summary_note:
+    type: string
+    description: "AI-generated bullet point summary."
+    example: "- Variables store data\n- Java is statically typed"
+  order_index:
+    type: integer
+    description: "The sequence order of this topic."
+    example: 1

@@ -1,0 +1,19 @@
+type: object
+description: "The AI-generated course structure returned to the user for review."
+required:
+  - title
+  - topics
+properties:
+  title:
+    type: string
+    description: "Course title"
+    example: "Java Programming Basics"
+  description:
+    type: string
+    description: "Course description"
+    example: "A comprehensive guide to Java syntax and OOP."
+  topics:
+    type: array
+    description: "List of extracted topics."
+    items:
+      $ref: './TopicDraft.yaml'

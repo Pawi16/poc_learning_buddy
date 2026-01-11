@@ -1,0 +1,9 @@
+type: object
+allOf:
+  - $ref: './TopicDraft.yaml' # Inherits title, raw_text, summary_note
+  - type: object
+    properties:
+      id:
+        type: integer
+        description: "The existing Topic ID. If null, Backend treats it as a NEW topic."
+        example: 55
