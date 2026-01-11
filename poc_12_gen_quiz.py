@@ -178,16 +178,11 @@ if __name__ == "__main__":
         {
           "difficulty": "medium",
           "quiz_type_config": [
-            { "type": "normal_multiple", "number": 1 },
-            { "type": "statement_verification", "number": 1 }
+            { "type": "normal_multiple", "number": 5 },
+            { "type": "statement_verification", "number": 5 },
+            { "type": "statement_counting", "number": 5 }
           ]
         },
-        {
-          "difficulty": "hard",
-          "quiz_type_config": [
-            { "type": "statement_counting", "number": 1 }
-          ]
-        }
       ]
     }
 

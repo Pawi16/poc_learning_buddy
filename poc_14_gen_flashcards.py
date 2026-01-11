@@ -48,13 +48,13 @@ def generate_flashcard_deck(payload: TopicPayload):
     2. **Front Side:** Should be a specific question or term (e.g., "What is the main advantage of X?").
     3. **Back Side:** Should be concise and accurate (1-2 sentences).
     
-    ⛔ SELF-CONTAINED RULE (CRITICAL):
+    SELF-CONTAINED RULE (CRITICAL):
     - Do NOT say "In the text above..." or "As mentioned...".
     - The card must make sense in isolation.
     - BAD Back: "It is used to create objects." (What is 'It'?)
     - GOOD Back: "The Builder Pattern is used to create objects..."
     
-    ⛔ DIVERSITY RULE:
+    DIVERSITY RULE:
     - Each card must cover a DIFFERENT fact. Do not repeat the same concept twice.
     
     OUTPUT FORMAT:
@@ -95,7 +95,7 @@ if __name__ == "__main__":
       "topicName": "Item 2: Builder Pattern",
       "topicContent": mock_content,
       "config": {
-        "amount": 5
+        "amount": 10
       }
     }
 
