@@ -1,0 +1,22 @@
+type: object
+required:
+  - cards
+properties:
+  cards:
+    type: array
+    items:
+      type: object
+      required:
+        - topic_id
+        - front_text
+        - back_text
+      properties:
+        id:
+          type: integer
+          description: "If present -> Update. If null -> Create."
+        topic_id:
+          type: integer
+        front_text:
+          type: string
+        back_text:
+          type: string

@@ -1,0 +1,15 @@
+type: object
+properties:
+  generated_cards:
+    type: array
+    items:
+      type: object
+      properties:
+        topic_id:
+          type: integer
+        front_text:
+          type: string
+          example: "What is the primary key?"
+        back_text:
+          type: string
+          example: "A unique identifier for a record in a table."

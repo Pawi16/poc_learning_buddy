@@ -1,0 +1,73 @@
+type: object
+required:
+  - quiz_id
+  - course_id
+  - title
+  - is_published
+  - questions
+properties:
+  quiz_id:
+    type: integer
+    example: 101
+  course_id:
+    type: integer
+    example: 55
+  title:
+    type: string
+    example: "Final Exam: Advanced Java"
+  description:
+    type: string
+    example: "Comprehensive test covering chapters 5-10."
+  is_published:
+    type: boolean
+    example: true
+  questions:
+    type: array
+    description: "Full list of questions for editing"
+    items:
+      type: object
+      required:
+        - id
+        - question_text
+        - question_type
+        - choices
+      properties:
+        id:
+          type: integer
+          description: "ID is crucial for updating existing questions"
+          example: 501
+        topic_id:
+          type: integer
+          description: "To categorize which topic this question belongs to"
+          example: 12
+        question_text:
+          type: string
+          example: "Which design pattern ensures a class has only one instance?"
+        question_type:
+          type: string
+          enum: [normal_multiple, statement_verification, statement_counting]
+        difficulty_level:
+          type: integer
+          example: 1
+        explanation:
+          type: string
+          example: "The Singleton pattern restricts instantiation..."
+        choices:
+          type: array
+          items:
+            type: object
+            required:
+              - id
+              - choice_text
+              - is_correct
+            properties:
+              id:
+                type: integer
+                description: "ID is crucial for updating existing choices"
+                example: 1001
+              choice_text:
+                type: string
+                example: "Singleton Pattern"
+              is_correct:
+                type: boolean
+                example: true

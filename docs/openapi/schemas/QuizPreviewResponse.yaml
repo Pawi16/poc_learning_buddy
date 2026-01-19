@@ -1,0 +1,28 @@
+type: object
+properties:
+  generated_questions:
+    type: array
+    items:
+      type: object
+      properties:
+        topic_id:
+          type: integer
+        question_text:
+          type: string
+        question_type:
+          type: string
+          enum: [normal_multiple, statement_verification, statement_counting]
+        difficulty:
+          type: string
+          enum: [easy, medium, hard]
+        explanation:
+          type: string
+        choices:
+          type: array
+          items:
+            type: object
+            properties:
+              choice_text:
+                type: string
+              is_correct:
+                type: boolean

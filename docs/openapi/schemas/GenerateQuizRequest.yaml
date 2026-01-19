@@ -1,0 +1,41 @@
+type: object
+required:
+  - quiz_topics
+properties:
+  quiz_topics:
+    type: array
+    items:
+      type: object
+      required:
+        - topic_id
+        - quiz_config
+      properties:
+        topic_id:
+          type: integer
+          description: "ID of the Topic (from Postgres)"
+        quiz_config:
+          type: array
+          description: "List of difficulty settings for this topic"
+          items:
+            type: object
+            required:
+              - difficulty
+              - quiz_type_config
+            properties:
+              difficulty:
+                type: string
+                enum: [easy, medium, hard]
+              quiz_type_config:
+                type: array
+                items:
+                  type: object
+                  required:
+                    - type
+                    - number
+                  properties:
+                    type:
+                      type: string
+                      enum: [normal_multiple, statement_verification, statement_counting]
+                    number:
+                      type: integer
+                      example: 3

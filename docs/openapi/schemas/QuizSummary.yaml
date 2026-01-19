@@ -1,0 +1,28 @@
+type: object
+description: "Lightweight object for listing quizzes in a course dashboard."
+required:
+  - quiz_id
+  - title
+  - is_published
+properties:
+  quiz_id:
+    type: integer
+    description: "Primary Key"
+    example: 15
+  title:
+    type: string
+    description: "The name of the quiz"
+    example: "Chapter 1: Intro to Java"
+  is_published:
+    type: boolean
+    description: "True if visible to students, False if Draft"
+    example: true
+  question_count:
+    type: integer
+    description: "Total number of questions in this quiz (Calculated field)"
+    example: 10
+  created_at:
+    type: string
+    format: date-time
+    description: "When the quiz was created"
+    example: "2023-10-27T10:00:00Z"

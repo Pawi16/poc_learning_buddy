@@ -87,19 +87,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: './schemas/CoursePreviewResponse'
+                $ref: './schemas/CoursePreviewResponse.yaml'
         '400' :
           description: Validation Failed (Missing Title, Invalid File Type/Size)
           content:
             application/json:
               schema:
-                $ref: './schemas/ErrorResponse'
+                $ref: './schemas/ErrorResponse.yaml'
         '503':
           description: AI Service Unavailable
           content:
             application/json:
               schema:
-                $ref: './schemas/ErrorResponse'
+                $ref: './schemas/ErrorResponse.yaml'
 
   /courses:
     post:
@@ -130,9 +130,38 @@ paths:
           content:
             application/json:
               schema:
-                $ref: './schemas/ErrorResponse'
+                $ref: './schemas/ErrorResponse.yaml'
   
   /courses/{id}:
+    get:
+      summary: Get Course Details (Metadata + Topic List)
+      description: |
+        Fetches course metadata (title, description, status) and a lightweight list of topics.
+        **Used for:**
+        - Course Dashboard / Overview page.
+        - Pre-filling the "Edit Course Metadata" form.
+        **Does NOT return:** The full `raw_text` of topics (use /content for that).
+      tags: [Courses]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: "Course ID"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/CourseDetailResponse.yaml'
+        '403':
+          description: Forbidden (Not the owner)
+        '404':
+          description: Course not found
     patch:
       summary: Edit Course Metadata & Publish/Unpublish Course
       tags: [Courses]
@@ -226,7 +255,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: './schemas/ErrorResponse.yaml
+                $ref: './schemas/ErrorResponse.yaml'
   
   /courses/{id}/content:
     get:
@@ -347,8 +376,451 @@ paths:
                   $ref: './schemas/CourseSummaryResponse.yaml'
 
 #Quiz
+  /quizzes/preview:
+    post:
+      summary: Generate Quiz Preview via AI
+      description: |
+        Accepts a configuration of topics, difficulties, and question types.
+        Sends request to AI Service to generate questions.
+        Returns a list of generated questions for the user to review/edit.
+      tags: [Quizzes]
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/GenerateQuizRequest.yaml'
+      responses:
+        '200':
+          description: AI Generation Successful
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/QuizPreviewResponse.yaml'
+        '400':
+          description: Validation Failed (Missing config or invalid types)
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/ErrorResponse.yaml'
+        '503':
+          description: AI Service Unavailable
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/ErrorResponse.yaml'
 
+  /courses/{course_id}/quizzes:
+    post:
+      summary: Save New Quiz 
+        Saves the quiz, its questions, and choices to the database.
+        This is called AFTER the user has reviewed the AI preview.
+      tags: [Quizzes]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: course_id
+          schema:
+            type: integer
+          required: true
+          description: ID of the course the quiz belongs to.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/CreateQuizRequest.yaml'
+      responses:
+        '201':
+          description: Quiz saved successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  quiz_id:
+                    type: integer
+                  message:
+                    type: string
+        '400':
+          description: Validation Failed (Missing Title, Empty Questions)
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/ErrorResponse.yaml'
+    get:
+      summary: List all Quizzes in a Course (Light Weight)
+      tags: [Quizzes]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: course_id
+          schema:
+            type: integer
+          required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: './schemas/QuizSummary.yaml'
+  
+  /quizzes/{id}:
+    get:
+      summary: Get Quiz Details
+      description: |
+        Fetches the full quiz data, including metadata, questions, and choices.
+        **Used in:**
+        - Use Case 11 (To show current Title/Status)
+        - Use Case 12 (To show current Questions/Choices for editing)
+      tags: [Quizzes]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: Quiz ID
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/QuizDetail.yaml'
+        '403':
+          description: Forbidden (Not the owner)
+        '404':
+          description: Quiz not found
+    patch:
+      summary: Update Quiz Metadata
+      description: |
+        Updates top-level information like Title or Visibility.
+        **Use Case 11: Edit Quiz Metadata**
+      tags: [Quizzes]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: Quiz ID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/UpdateQuizMetadataRequest.yaml'
+      responses:
+        '200':
+          description: Metadata Updated Successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Quiz metadata updated."
+        '400':
+          description: Validation Failed (Title is null)
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/ErrorResponse.yaml'
+        '404':
+          description: Quiz Not Found
+    put:
+      summary: Update Quiz Content (Questions & Choices)
+      description: |
+        Replaces the questions/choices of the quiz with the new list provided.
+        - Questions/Choices with IDs are updated.
+        - Questions/Choices without IDs are inserted (Created).
+        - Questions/Choices missing from this payload (but present in DB) are deleted.
+        **Use Case 12: Edit Quiz Question**
+      tags: [Quizzes]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/UpdateQuizContentRequest.yaml'
+      responses:
+        '200':
+          description: Content Updated Successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Quiz content saved successfully."
+        '400':
+          description: Validation Failed (Missing required fields in questions)
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/ErrorResponse.yaml'
+    delete:
+      summary: Delete Quiz
+      tags: [Quizzes]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+      responses:
+        '200':
+          description: Deleted successfully
 
+#Flashcard
+  /decks/preview:
+    post:
+      summary: Generate Flashcard Deck Preview via AI
+      description: |
+        Accepts a list of topics and configuration (card count).
+        Sends request to AI Service to generate flashcards.
+        Returns a list of generated cards for the user to review/edit.
+        **Use Case 13: Create Flashcards (AI Step)**
+      tags: [Flashcards]
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/GenerateDeckRequest.yaml'
+      responses:
+        '200':
+          description: AI Generation Successful
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/DeckPreviewResponse.yaml'
+        '400':
+          description: Validation Failed
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/ErrorResponse.yaml'
+        '503':
+          description: AI Service Unavailable
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/ErrorResponse.yaml'
+    
+  /courses/{course_id}/decks:
+    post:
+      summary: Save New Flashcard Deck (Use Case 13 Steps 20-23)
+      description:
+        Saves the deck and its flashcards to the database.
+        Called AFTER the user reviews the AI preview.
+      tags: [Flashcards]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: course_id
+          schema:
+            type: integer
+          required: true
+          description: ID of the course.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/CreateDeckRequest.yaml'
+      responses:
+        '201':
+          description: Deck saved successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  deck_id:
+                    type: integer
+                  message:
+                    type: string
+        '400':
+          description: Validation Failed (Missing Title, Empty Cards)
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/ErrorResponse.yaml'
+
+    get:
+      summary: List all Flashcard Decks in a Course (Summary lightweight detail)
+      tags: [Flashcards]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: course_id
+          schema:
+            type: integer
+          required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: './schemas/DeckSummary.yaml'
+  /decks/{id}:
+    get:
+      summary: Get Deck Details
+      description: |
+        Fetches full deck data including metadata and list of flashcards.
+        **Used in:**
+        - Use Case 14 (To show current Title)
+        - Use Case 15 (To show current Cards for editing)
+        - Study Mode (To play the deck)
+      tags: [Flashcards]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: Deck ID
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/DeckDetail.yaml'
+        '404':
+          description: Deck not found
+    
+    # ------------------------------------------------------------------
+    # USE CASE 14: Edit Flashcard Metadata
+    # ------------------------------------------------------------------
+    patch:
+      summary: Update Deck Metadata
+      description: |
+        Updates top-level information like Title or Visibility.
+      tags: [Flashcards]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/UpdateDeckMetadataRequest.yaml'
+      responses:
+        '200':
+          description: Metadata Updated Successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Deck metadata updated."
+        '400':
+          description: Validation Failed
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/ErrorResponse.yaml'
+
+    # ------------------------------------------------------------------
+    # USE CASE 15: Edit Flashcard Content (Bulk Update)
+    # ------------------------------------------------------------------
+    put:
+      summary: Update Deck Content (Flashcards)
+      description: |
+        Replaces the flashcards in the deck with the new list provided.
+        - Cards with IDs are updated.
+        - Cards without IDs are inserted.
+        - Cards missing from this list are deleted.
+      tags: [Flashcards]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/UpdateDeckContentRequest.yaml'
+      responses:
+        '200':
+          description: Content Updated Successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Deck content saved successfully."
+        '400':
+          description: Validation Failed
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/ErrorResponse.yaml'
+    
+    delete:
+      summary: Delete Deck
+      tags: [Flashcards]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+      responses:
+        '200':
+          description: Deleted successfully
 
 
 

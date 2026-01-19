@@ -1,0 +1,26 @@
+type: object
+required:
+  - title
+  - cards
+properties:
+  title:
+    type: string
+    example: "Database Concepts Vocabulary"
+  is_published:
+    type: boolean
+    default: true
+  cards:
+    type: array
+    items:
+      type: object
+      required:
+        - topic_id
+        - front_text
+        - back_text
+      properties:
+        topic_id:
+          type: integer
+        front_text:
+          type: string
+        back_text:
+          type: string

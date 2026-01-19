@@ -1,0 +1,18 @@
+type: object
+required:
+  - deck_topics
+properties:
+  deck_topics:
+    type: array
+    items:
+      type: object
+      required:
+        - topic_id
+        - amount
+      properties:
+        topic_id:
+          type: integer
+        amount:
+          type: integer
+          description: "Number of cards to generate for this topic"
+          example: 5

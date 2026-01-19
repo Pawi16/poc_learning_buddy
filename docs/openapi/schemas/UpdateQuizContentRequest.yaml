@@ -1,0 +1,47 @@
+type: object
+required:
+  - questions
+properties:
+  questions:
+    type: array
+    description: "The authoritative list of questions for this quiz."
+    items:
+      type: object
+      required:
+        - question_text
+        - question_type
+        - topic_id
+        - difficulty_level
+        - choices
+      properties:
+        id:
+          type: integer
+          description: "If present, Update. If null, Create."
+        topic_id:
+          type: integer
+          description: "FK to Topic"
+        question_text:
+          type: string
+        question_type:
+          type: string
+          enum: [normal_multiple, statement_verification, statement_counting]
+        difficulty_level:
+          type: integer
+          example: 2
+        explanation:
+          type: string
+        choices:
+          type: array
+          items:
+            type: object
+            required:
+              - choice_text
+              - is_correct
+            properties:
+              id:
+                type: integer
+                description: "If present, Update. If null, Create."
+              choice_text:
+                type: string
+              is_correct:
+                type: boolean

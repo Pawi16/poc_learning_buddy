@@ -1,0 +1,22 @@
+type: object
+required:
+  - deck_id
+  - title
+  - card_count
+  - is_published
+properties:
+  deck_id:
+    type: integer
+    example: 20
+  title:
+    type: string
+    example: "Chapter 1 Vocab"
+  card_count:
+    type: integer
+    example: 15
+  is_published:
+    type: boolean
+    example: true
+  created_at:
+    type: string
+    format: date-time

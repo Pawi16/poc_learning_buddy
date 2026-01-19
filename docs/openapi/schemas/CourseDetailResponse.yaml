@@ -1,0 +1,51 @@
+type: object
+description: "Course detail for showing list of course and showing list of topic in course."
+required:
+  - course_id
+  - title
+  - is_published
+  - topics
+properties:
+  course_id:
+    type: integer
+    example: 101
+  title:
+    type: string
+    example: "Introduction to Computer Science"
+  description:
+    type: string
+    example: "A comprehensive guide to algorithms and data structures."
+  is_published:
+    type: boolean
+    description: "True if visible to students"
+    example: true
+  created_at:
+    type: string
+    format: date-time
+  updated_at:
+    type: string
+    format: date-time
+  topics:
+    type: array
+    description: "Lightweight list of topics for navigation/overview"
+    items:
+      type: object
+      required:
+        - topic_id
+        - title
+        - order_index
+      properties:
+        topic_id:
+          type: integer
+          example: 50
+        title:
+          type: string
+          example: "Chapter 1: Binary Systems"
+        description:
+          type: string
+          description: "Course description"
+          example: "A comprehensive guide to Binary."
+        order_index:
+          type: integer
+          description: "To order the list correctly in the UI"
+          example: 1

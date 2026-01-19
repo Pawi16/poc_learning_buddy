@@ -1,0 +1,33 @@
+type: object
+required:
+  - deck_id
+  - title
+  - is_published
+  - cards
+properties:
+  deck_id:
+    type: integer
+  course_id:
+    type: integer
+  title:
+    type: string
+  is_published:
+    type: boolean
+  cards:
+    type: array
+    items:
+      type: object
+      required:
+        - id
+        - front_text
+        - back_text
+      properties:
+        id:
+          type: integer
+          description: "Flashcard ID"
+        topic_id:
+          type: integer
+        front_text:
+          type: string
+        back_text:
+          type: string
