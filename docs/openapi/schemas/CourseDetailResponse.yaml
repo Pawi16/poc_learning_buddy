@@ -19,6 +19,10 @@ properties:
     type: boolean
     description: "True if visible to students"
     example: true
+  is_enrolled:
+    type: boolean
+    description: "True if the current user is already enrolled in this course."
+    example: false
   created_at:
     type: string
     format: date-time

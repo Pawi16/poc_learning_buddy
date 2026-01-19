@@ -2,5 +2,12 @@ type: object
 properties:
   title:
     type: string
+  solution_visibility:
+    type: integer
+    description: |
+      Determines feedback visibility.
+      1 = Practice Mode (Show answers & explanations)
+      2 = Exam Mode (Hide answers, show score only)
+    example: 1
   is_published:
     type: boolean

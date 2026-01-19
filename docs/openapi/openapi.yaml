@@ -102,6 +102,33 @@ paths:
                 $ref: './schemas/ErrorResponse.yaml'
 
   /courses:
+    get:
+      summary: Search & List Public Courses
+      description: |
+        Retrieves a list of published courses. 
+        Supports search functionality via query parameters.
+        **Use Case 16: Search Course**
+      tags: [Courses]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: query
+          name: search
+          schema:
+            type: string
+          description: "Keyword to match Title or Description"
+          required: false
+          example: "Python"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: './schemas/CourseSummaryResponse.yaml'
+
     post:
       summary: Save new course
       tags: [Courses]
@@ -374,6 +401,65 @@ paths:
                 type: array
                 items:
                   $ref: './schemas/CourseSummaryResponse.yaml'
+  
+  /courses/enrolled:
+    get:
+      summary: View My Enrolled Courses
+      description: |
+        Retrieves a list of courses the current user has enrolled in.
+        **Use Case 19: View My Enrolled Course**
+      tags: [Courses]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: './schemas/CourseSummaryResponse.yaml'
+  
+  /courses/{id}/enroll:
+    post:
+      summary: Enroll in a Course
+      description: |
+        Registers the current user as a learner in the specified course.
+        **Use Case 18: Enroll Course**
+      tags: [Courses]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: Course ID
+      responses:
+        '201':
+          description: Enrolled successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Enrollment successful."
+        '400':
+          description: Bad Request (Already enrolled, or course not published).
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/ErrorResponse.yaml'
+        '404':
+          description: Course not found.
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/ErrorResponse.yaml'
 
 #Quiz
   /quizzes/preview:
@@ -821,6 +907,52 @@ paths:
       responses:
         '200':
           description: Deleted successfully
+    
+# ----------------------------------------------------------------------------
+  # USE CASE 21: Take Quiz (Submit Attempt)
+  # ----------------------------------------------------------------------------
+  /quizzes/{id}/attempt:
+    post:
+      summary: Submit Quiz Answers
+      description: |
+        Submits a batch of answers for a quiz attempt.
+        Calculates the score and saves history.
+        **Returns:**
+        - Score and Feedback immediately.
+        - If `Practice Mode`: Includes correct answers and explanations.
+        - If `Exam Mode`: Includes only the score (no details).
+        **Use Case 21: Take Quiz**
+      tags: [Quizzes]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: Quiz ID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/SubmitQuizRequest.yaml'
+      responses:
+        '201':
+          description: Attempt Submitted Successfully
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/QuizResultResponse.yaml'
+        '400':
+          description: Validation Failed (e.g. Missing required questions)
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/ErrorResponse.yaml'
+        '404':
+          description: Quiz not found    
 
 
 

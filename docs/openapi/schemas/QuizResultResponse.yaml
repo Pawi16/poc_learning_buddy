@@ -1,0 +1,38 @@
+type: object
+required:
+  - attempt_id
+  - total_score
+  - max_score
+  - passed
+properties:
+  attempt_id:
+    type: integer
+    description: "ID of the newly created QuizAttempt record"
+  total_score:
+    type: integer
+    example: 8
+  max_score:
+    type: integer
+    example: 10
+  passed:
+    type: boolean
+    description: "Optional: Logic for passing grade (e.g. > 60%)"
+  feedback:
+    type: array
+    description: "Detailed breakdown. Empty if Exam Mode."
+    items:
+      type: object
+      properties:
+        question_id:
+          type: integer
+        is_correct:
+          type: boolean
+        correct_choice_ids:
+          type: array
+          description: "List of ALL correct choice IDs (Future-proof for multi-select)."
+          items:
+            type: integer
+            example: 1001
+        explanation:
+          type: string
+          example: "You missed this because..."

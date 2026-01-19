@@ -15,9 +15,13 @@ properties:
   title:
     type: string
     example: "Final Exam: Advanced Java"
-  description:
-    type: string
-    example: "Comprehensive test covering chapters 5-10."
+  solution_visibility:
+    type: integer
+    description: |
+      Determines feedback visibility.
+      1 = Practice Mode (Show answers & explanations)
+      2 = Exam Mode (Hide answers, show score only)
+    example: 1
   is_published:
     type: boolean
     example: true
@@ -49,9 +53,6 @@ properties:
         difficulty_level:
           type: integer
           example: 1
-        explanation:
-          type: string
-          example: "The Singleton pattern restricts instantiation..."
         choices:
           type: array
           items:
@@ -59,7 +60,6 @@ properties:
             required:
               - id
               - choice_text
-              - is_correct
             properties:
               id:
                 type: integer
@@ -68,6 +68,3 @@ properties:
               choice_text:
                 type: string
                 example: "Singleton Pattern"
-              is_correct:
-                type: boolean
-                example: true

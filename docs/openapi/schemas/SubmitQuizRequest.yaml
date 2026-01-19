@@ -1,0 +1,18 @@
+type: object
+required:
+  - answers
+properties:
+  answers:
+    type: array
+    description: "List of selected answers"
+    items:
+      type: object
+      required:
+        - question_id
+        - choice_id
+      properties:
+        question_id:
+          type: integer
+        choice_id:
+          type: integer
+          description: "The ID of the choice the user selected."

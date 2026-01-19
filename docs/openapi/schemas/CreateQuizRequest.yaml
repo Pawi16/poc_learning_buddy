@@ -6,6 +6,13 @@ properties:
   title:
     type: string
     example: "Chapter 1 Exam"
+  solution_visibility:
+    type: integer
+    description: |
+      Determines feedback visibility.
+      1 = Practice Mode (Show answers & explanations)
+      2 = Exam Mode (Hide answers, show score only)
+    example: 1
   is_published:
     type: boolean
     description: "Mapped from Solution Visibility (Practice=True, Exam=False/Scheduled?)"
