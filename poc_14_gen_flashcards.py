@@ -22,7 +22,7 @@ class FlashcardItem(BaseModel):
     id: int = Field(..., description="Card sequence number (1, 2, 3...)")
     front_text: str = Field(..., description="The question, term, or concept (Front side)")
     back_text: str = Field(..., description="The answer, definition, or explanation (Back side)")
-    category: Literal["Definition", "Concept", "Code", "Pro/Con"] = Field(..., description="Type of information")
+    category: Literal["Definition", "Concept", "Pro/Con"] = Field(..., description="Type of information")
 
 class FlashcardDeck(BaseModel):
     topic_title: str
