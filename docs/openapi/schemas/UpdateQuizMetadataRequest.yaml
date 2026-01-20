@@ -5,6 +5,14 @@ properties:
   title:
     type: string
     example: "Midterm Exam Revised"
+  solution_visibility:
+    type: string  
+    enum: [ALWAYS, NEVER]
+    description: |
+      Determines feedback visibility.
+      ALWAYS = Practice Mode (Show answers and explanation at the end)
+      NEVER = Exam Mode (Hide answers and explanation)
+    example: "ALWAYS"
   is_published:
     type: boolean
     description: "Update visibility status"

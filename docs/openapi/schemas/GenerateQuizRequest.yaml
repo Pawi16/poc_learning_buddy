@@ -24,7 +24,7 @@ properties:
             properties:
               difficulty:
                 type: string
-                enum: [easy, medium, hard]
+                enum: [EASY, MEDIUM, HARD]
               quiz_type_config:
                 type: array
                 items:
@@ -35,7 +35,7 @@ properties:
                   properties:
                     type:
                       type: string
-                      enum: [normal_multiple, statement_verification, statement_counting]
+                      enum: [NORMAL_MULTIPLE, STATEMENT_VERIFICATION, STATEMENT_COUNTING]
                     number:
                       type: integer
                       example: 3

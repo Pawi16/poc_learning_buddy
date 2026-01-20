@@ -16,12 +16,13 @@ properties:
     type: string
     example: "Final Exam: Advanced Java"
   solution_visibility:
-    type: integer
+    type: string  
+    enum: [ALWAYS, NEVER]
     description: |
       Determines feedback visibility.
-      1 = Practice Mode (Show answers & explanations)
-      2 = Exam Mode (Hide answers, show score only)
-    example: 1
+      ALWAYS = Practice Mode (Show answers and explanation at the end)
+      NEVER = Exam Mode (Hide answers and explanation)
+    example: "ALWAYS"
   is_published:
     type: boolean
     example: true
@@ -49,10 +50,10 @@ properties:
           example: "Which design pattern ensures a class has only one instance?"
         question_type:
           type: string
-          enum: [normal_multiple, statement_verification, statement_counting]
+          enum: [NORMAL_MULTIPLE, STATEMENT_VERIFICATION, STATEMENT_COUNTING]
         difficulty_level:
-          type: integer
-          example: 1
+          type: string
+          enum: [EASY, MEDIUM, HARD]
         choices:
           type: array
           items:

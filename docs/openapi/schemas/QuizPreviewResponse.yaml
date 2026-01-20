@@ -11,10 +11,10 @@ properties:
           type: string
         question_type:
           type: string
-          enum: [normal_multiple, statement_verification, statement_counting]
+          enum: [NORMAL_MULTIPLE, STATEMENT_VERIFICATION, STATEMENT_COUNTING]
         difficulty:
           type: string
-          enum: [easy, medium, hard]
+          enum: [EASY, MEDIUM, HARD]
         explanation:
           type: string
         choices:

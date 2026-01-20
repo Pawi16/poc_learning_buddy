@@ -7,12 +7,13 @@ properties:
     type: string
     example: "Chapter 1 Exam"
   solution_visibility:
-    type: integer
+    type: string  
+    enum: [ALWAYS, NEVER]
     description: |
       Determines feedback visibility.
-      1 = Practice Mode (Show answers & explanations)
-      2 = Exam Mode (Hide answers, show score only)
-    example: 1
+      ALWAYS = Practice Mode (Show answers and explanation at the end)
+      NEVER = Exam Mode (Hide answers and explanation)
+    example: "ALWAYS"
   is_published:
     type: boolean
     description: "Mapped from Solution Visibility (Practice=True, Exam=False/Scheduled?)"
@@ -33,9 +34,10 @@ properties:
           type: string
         question_type:
           type: string
+          description: "NORMAL_MULTIPLE/STATEMENT_VERIFICATION/STATEMENT_COUNTING"
         difficulty_level:
-          type: integer
-          description: "Map easy/medium/hard to 1/2/3"
+          type: string
+          description: "EASY/MEDIUM/HARD"
         explanation:
           type: string
         choices:
