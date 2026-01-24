@@ -104,8 +104,8 @@ paths:
             application/json:
               schema:
                 $ref: "./schemas/ErrorResponse.yaml"
-        "503":
-          description: AI Service Unavailable
+        "502":
+          description: The upstream service failed
           content:
             application/json:
               schema:
