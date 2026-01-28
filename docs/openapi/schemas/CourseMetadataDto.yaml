@@ -1,0 +1,19 @@
+type: object
+description: "The lightweight updated metadata (Header info)."
+properties:
+  id:
+    type: integer
+    example: 101
+  title:
+    type: string
+    example: "Advanced Java Programming"
+  description:
+    type: string
+    example: "Deep dive into memory management..."
+  is_published:
+    type: boolean
+    example: true
+  updated_at:
+    type: string
+    format: date-time
+    example: "2024-01-26T14:30:00"

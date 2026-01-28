@@ -200,7 +200,7 @@ paths:
         "404":
           description: Course not found
     patch:
-      summary: Edit Course Metadata & Publish/Unpublish Course
+      summary: Edit Course Metadata & Publish/Unpublish Course *** return an updated metadata to be used in ui
       tags: [Courses]
       security:
         - bearerAuth: []
@@ -229,6 +229,8 @@ paths:
                   message:
                     type: string
                     example: "Course updated successfully."
+                  data:
+                    $ref: "./schemas/CourseMetadataDto.yaml"
         "400":
           description: Validation Failed (e.g. Title is null).
           content:
