@@ -23,6 +23,10 @@ properties:
     type: boolean
     description: "True if the current user is already enrolled in this course."
     example: false
+  is_owner:
+    type: boolean
+    description: "Ture if the current user is the course owner."
+    example: true
   created_at:
     type: string
     format: date-time
