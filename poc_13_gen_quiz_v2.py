@@ -2,10 +2,28 @@ import json
 import time
 from typing import List, Literal
 from langchain_ollama import ChatOllama
+from langchain_openai import ChatOpenAI
 from pydantic import BaseModel, Field
 
 # --- 1. CONFIGURATION ---
-llm = ChatOllama(model="qwen2.5:14b", temperature=0.3)
+class Settings:
+    MODEL_NAME = "GLM-4.5" 
+    # REPLACE WITH YOUR ACTUAL KEY
+    ZHIPUAI_API_KEY = "placeholder" 
+    ZHIPU_BASE_URL = "https://api.z.ai/api/coding/paas/v4"
+    AI_MAX_RETRIES = 3
+    AI_TIMEOUT = 90
+
+settings = Settings()
+
+llm = ChatOpenAI(
+    model=settings.MODEL_NAME,
+    api_key=settings.ZHIPUAI_API_KEY,
+    base_url=settings.ZHIPU_BASE_URL,
+    temperature=0.1,
+    max_retries=settings.AI_MAX_RETRIES,
+    timeout=settings.AI_TIMEOUT,
+)
 
 # --- 2. DATA MODELS ---
 
