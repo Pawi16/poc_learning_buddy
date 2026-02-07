@@ -474,13 +474,12 @@ paths:
                 $ref: "./schemas/ErrorResponse.yaml"
 
   #Quiz
-  /quizzes/preview:
+  /quizzes/preview/jobs:
     post:
-      summary: Generate Quiz Preview via AI
+      summary: Start Quiz Generation Job (Batch)
       description: |
-        Accepts a configuration of topics, difficulties, and question types.
-        Sends request to AI Service to generate questions.
-        Returns a list of generated questions for the user to review/edit.
+        Starts a background job to generate quiz questions for multiple topics.
+        Returns a `job_id` immediately. The client should poll the status endpoint to get results.
       tags: [Quizzes]
       security:
         - bearerAuth: []
@@ -491,25 +490,44 @@ paths:
             schema:
               $ref: "./schemas/GenerateQuizRequest.yaml"
       responses:
-        "200":
-          description: AI Generation Successful
+        "202":
+          description: Job Accepted (Processing started)
           content:
             application/json:
               schema:
-                $ref: "./schemas/QuizPreviewResponse.yaml"
+                $ref: "./schemas/JobStartResponse.yaml"
         "400":
-          description: Validation Failed (Missing config or invalid types)
+          description: Bad Request.
           content:
             application/json:
               schema:
                 $ref: "./schemas/ErrorResponse.yaml"
-        "503":
-          description: AI Service Unavailable
+  /quizzes/preview/jobs/{jobId}:
+    get:
+      summary: Get Generation Job Status
+      description: |
+        Retrieves the current status, progress percentage, and final result of a quiz generation job.
+        Poll this endpoint every 2-3 seconds until `status` is 'COMPLETED'.
+      tags: [Quizzes]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: jobId
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: The ID returned by the start endpoint.
+      responses:
+        "200":
+          description: Current Job Status
           content:
             application/json:
               schema:
-                $ref: "./schemas/ErrorResponse.yaml"
-
+                $ref: "./schemas/JobStatusResponse.yaml"
+        "404":
+          description: Job Not Found
   /courses/{course_id}/quizzes:
     post:
       summary: Save New Quiz

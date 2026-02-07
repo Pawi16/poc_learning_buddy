@@ -1,0 +1,17 @@
+type: object
+required:
+  - job_id
+  - status
+  - message
+properties:
+  job_id:
+    type: string
+    format: uuid
+    example: "a1b2c3d4-e5f6-7890-1234-567890abcdef"
+  status:
+    type: string
+    enum: [QUEUED, PROCESSING]
+    example: "QUEUED"
+  message:
+    type: string
+    example: "Quiz generation started. Please poll for results."

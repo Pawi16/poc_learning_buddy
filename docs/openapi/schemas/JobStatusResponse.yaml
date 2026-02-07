@@ -1,0 +1,29 @@
+type: object
+required:
+  - job_id
+  - status
+  - progress_percent
+properties:
+  job_id:
+    type: string
+    format: uuid
+  status:
+    type: string
+    enum: [QUEUED, PROCESSING, COMPLETED, FAILED]
+    description: Current state of the background job.
+  progress_percent:
+    type: integer
+    minimum: 0
+    maximum: 100
+    description: Estimated completion percentage (for loading bars).
+    example: 45
+  error_message:
+    type: string
+    nullable: true
+    description: Only present if status is FAILED.
+  result:
+    # This is where your ORIGINAL response goes!
+    # It is null while processing, and filled when COMPLETED.
+    nullable: true
+    allOf:
+      - $ref: "./QuizPreviewResponse.yaml"
