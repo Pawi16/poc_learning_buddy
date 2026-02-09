@@ -11,7 +11,7 @@ properties:
         - question_text
         - question_type
         - topic_id
-        - difficulty_level
+        - difficulty
         - choices
       properties:
         id:
@@ -25,7 +25,7 @@ properties:
         question_type:
           type: string
           enum: [NORMAL_MULTIPLE, STATEMENT_VERIFICATION, STATEMENT_COUNTING]
-        difficulty_level:
+        difficulty:
           type: string
           enum: [EASY, MEDIUM, HARD]
         explanation:

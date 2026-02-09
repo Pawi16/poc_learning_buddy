@@ -16,7 +16,7 @@ properties:
     example: "ALWAYS"
   is_published:
     type: boolean
-    description: "Mapped from Solution Visibility (Practice=True, Exam=False/Scheduled?)"
+    description: "show if another user beside creator can see this quiz or not"
     default: false
   questions:
     type: array
@@ -34,10 +34,10 @@ properties:
           type: string
         question_type:
           type: string
-          description: "NORMAL_MULTIPLE/STATEMENT_VERIFICATION/STATEMENT_COUNTING"
-        difficulty_level:
+          enum: [NORMAL_MULTIPLE, STATEMENT_VERIFICATION, STATEMENT_COUNTING]
+        difficulty:
           type: string
-          description: "EASY/MEDIUM/HARD"
+          enum: [EASY, MEDIUM, HARD]
         explanation:
           type: string
         choices:

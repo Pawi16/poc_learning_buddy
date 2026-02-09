@@ -532,7 +532,7 @@ paths:
     post:
       summary: Save New Quiz
         Saves the quiz, its questions, and choices to the database.
-        This is called AFTER the user has reviewed the AI preview.
+        This is called AFTER the user has got result of quiz generation and  reviewed the AI preview.
       tags: [Quizzes]
       security:
         - bearerAuth: []

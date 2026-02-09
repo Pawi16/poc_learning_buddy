@@ -16,7 +16,7 @@ properties:
     type: string
     example: "Final Exam: Advanced Java"
   solution_visibility:
-    type: string  
+    type: string
     enum: [ALWAYS, NEVER]
     description: |
       Determines feedback visibility.
@@ -51,7 +51,7 @@ properties:
         question_type:
           type: string
           enum: [NORMAL_MULTIPLE, STATEMENT_VERIFICATION, STATEMENT_COUNTING]
-        difficulty_level:
+        difficulty:
           type: string
           enum: [EASY, MEDIUM, HARD]
         choices:
