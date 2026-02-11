@@ -71,7 +71,6 @@ properties:
             required:
               - id
               - choice_text
-              - is_correct
             properties:
               id:
                 type: integer
@@ -80,5 +79,4 @@ properties:
               choice_text:
                 type: string
                 example: "Singleton Pattern"
-              is_correct: 
-                type: boolean
+
