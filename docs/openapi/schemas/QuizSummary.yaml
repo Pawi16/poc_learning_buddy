@@ -4,6 +4,7 @@ required:
   - quiz_id
   - title
   - is_published
+  - solution_visibility
 properties:
   quiz_id:
     type: integer
@@ -13,6 +14,14 @@ properties:
     type: string
     description: "The name of the quiz"
     example: "Chapter 1: Intro to Java"
+  solution_visibility:
+    type: string
+    enum: [ALWAYS, NEVER]
+    description: |
+      Determines feedback visibility.
+      ALWAYS = Practice Mode (Show answers and explanation at the end)
+      NEVER = Exam Mode (Hide answers and explanation)
+    example: "ALWAYS"
   is_published:
     type: boolean
     description: "True if visible to students, False if Draft"
@@ -26,3 +35,8 @@ properties:
     format: date-time
     description: "When the quiz was created"
     example: "2023-10-27T10:00:00Z"
+  updated_at:
+    type: string
+    format: date-time
+    description: "When the quiz was updated"
+    example: "2023-10-28T10:00:00Z"
