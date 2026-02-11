@@ -616,8 +616,9 @@ paths:
         Calculates the score and saves history.
         **Returns:**
         - Score and Feedback immediately.
-        - If `Practice Mode`: Includes correct answers and explanations.
-        - If `Exam Mode`: Includes only the score (no details).
+        check from solution_visibility field 
+        - If `ALwAYS`: Includes correct answers and explanations.
+        - If `NEVER`: Includes only the score (no details).
         **Use Case 21: Take Quiz**
       tags: [Quizzes]
       security:
