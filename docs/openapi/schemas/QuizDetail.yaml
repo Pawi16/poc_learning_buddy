@@ -64,6 +64,8 @@ properties:
         difficulty:
           type: string
           enum: [EASY, MEDIUM, HARD]
+        explanation:
+          type: string
         choices:
           type: array
           items:
