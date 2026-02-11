@@ -568,7 +568,13 @@ paths:
               schema:
                 $ref: "./schemas/ErrorResponse.yaml"
     get:
-      summary: List all Quizzes in a Course (Light Weight)
+      summary: |
+        Returns a list of quizzes for the specified course.
+        
+        **Visibility Logic:**
+        - **Course Owner:** Returns ALL quizzes (including drafts/unpublished).
+        - **Students/Others:** Returns ONLY `PUBLISHED` quizzes.
+      
       tags: [Quizzes]
       security:
         - bearerAuth: []
