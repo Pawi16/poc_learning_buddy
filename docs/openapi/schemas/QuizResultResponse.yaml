@@ -3,36 +3,60 @@ required:
   - attempt_id
   - total_score
   - max_score
-  - passed
+  - start_time
+  - end_time
+  - duration_seconds
 properties:
   attempt_id:
     type: integer
-    description: "ID of the newly created QuizAttempt record"
   total_score:
     type: integer
-    example: 8
   max_score:
     type: integer
-    example: 10
-  passed:
-    type: boolean
-    description: "Optional: Logic for passing grade (e.g. > 60%)"
+  start_time:
+    type: string
+    format: date-time
+    description: "When the quiz was start"
+    example: "2023-10-27T10:00:00Z"
+  end_time:
+    type: string
+    format: date-time
+    description: "When the quiz was submit"
+    example: "2023-10-27T10:00:00Z"
+  duration_seconds:
+    type: integer
+    description: "Total time taken in seconds"
+    example: 345
   feedback:
     type: array
-    description: "Detailed breakdown. Empty if Exam Mode."
+    description: "Full review data. Empty if Exam Mode (solution_visibility = NEVER)."
     items:
       type: object
       properties:
         question_id:
           type: integer
+        question_text:       # <--- NEW: Context
+          type: string
         is_correct:
           type: boolean
-        correct_choice_ids:
+        user_choice_ids:     # <--- NEW: Verification
           type: array
-          description: "List of ALL correct choice IDs (Future-proof for multi-select)."
+          description: "The choice(s) the user selected"
           items:
             type: integer
-            example: 1001
+        correct_choice_ids:
+          type: array
+          description: "The correct answer(s)"
+          items:
+            type: integer
         explanation:
           type: string
-          example: "You missed this because..."
+        choices:             # <--- NEW: Context for rendering
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+              choice_text:
+                type: string

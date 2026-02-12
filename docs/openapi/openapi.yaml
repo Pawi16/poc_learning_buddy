@@ -617,7 +617,7 @@ paths:
         **Returns:**
         - Score and Feedback immediately.
         check from solution_visibility field 
-        - If `ALwAYS`: Includes correct answers and explanations.
+        - If `ALWAYS`: Includes correct answers and explanations.
         - If `NEVER`: Includes only the score (no details).
         **Use Case 21: Take Quiz**
       tags: [Quizzes]
@@ -644,7 +644,7 @@ paths:
               schema:
                 $ref: "./schemas/QuizResultResponse.yaml"
         "400":
-          description: Validation Failed (e.g. Missing required questions)
+          description: Validation Failed (e.g. Missing required questions or answer)
           content:
             application/json:
               schema:
