@@ -597,6 +597,7 @@ paths:
   /quizzes/{id}/attempt:
     get:
       summary: Get Quiz for Taking (Student)
+      tags: [Quizzes]
       description: Returns questions and choices. Answers are stripped for security. Questions may be randomized.
       security:
         - bearerAuth: []
@@ -685,7 +686,8 @@ paths:
     patch:
       summary: Update Quiz Metadata
       description: |
-        Updates top-level information like Title or Visibility.
+        Updates top-level information like Title, Solution Visibility, or Publish status.
+        Returns the updated metadata for the UI to refresh without another GET request.
         **Use Case 11: Edit Quiz Metadata**
       tags: [Quizzes]
       security:
@@ -709,17 +711,15 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  message:
-                    type: string
-                    example: "Quiz metadata updated."
+                $ref: "./schemas/QuizMetadataResponse.yaml" # <--- Updated to return data
         "400":
           description: Validation Failed (Title is null)
           content:
             application/json:
               schema:
                 $ref: "./schemas/ErrorResponse.yaml"
+        "403":
+          description: Forbidden (Not the owner)
         "404":
           description: Quiz Not Found
     put:
@@ -757,11 +757,15 @@ paths:
                     type: string
                     example: "Quiz content saved successfully."
         "400":
-          description: Validation Failed (Missing required fields in questions)
+          description: Validation Failed (Title is null)
           content:
             application/json:
               schema:
                 $ref: "./schemas/ErrorResponse.yaml"
+        "403":
+          description: Forbidden (Not the owner)
+        "404":
+          description: Quiz Not Found
     delete:
       summary: Delete Quiz
       tags: [Quizzes]

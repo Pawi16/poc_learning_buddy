@@ -1,0 +1,34 @@
+type: object
+description: "The lightweight updated quiz metadata (Header info)."
+required:
+  - id
+  - course_id
+  - title
+  - solution_visibility
+  - is_published
+  - updated_at
+properties:
+  id:
+    type: integer
+    example: 101
+  course_id:
+    type: integer
+    description: "The ID of the course this quiz belongs to."
+    example: 55
+  title:
+    type: string
+    example: "Midterm Exam Revised"
+  solution_visibility:
+    type: string
+    enum: [ALWAYS, NEVER]
+    description: |
+      ALWAYS = Practice Mode (Show answers and explanation at the end)
+      NEVER = Exam Mode (Hide answers and explanation)
+    example: "ALWAYS"
+  is_published:
+    type: boolean
+    example: true
+  updated_at:
+    type: string
+    format: date-time
+    example: "2026-02-13T10:30:00Z"
